@@ -78,7 +78,7 @@ public class Weather extends AOKPPreferenceFragment implements
         mStatusBarLocation = (ListPreference) findPreference("statusbar_location");
         mStatusBarLocation.setOnPreferenceChangeListener(this);
         mStatusBarLocation.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUSBAR_WEATHER_STYLE, 2) + "");
+                Settings.System.STATUSBAR_WEATHER_STYLE, 1) + "");
 
         mPanelHideStatus = (ListPreference) findPreference("weather_hide");
         mPanelHideStatus.setOnPreferenceChangeListener(this);
@@ -103,7 +103,7 @@ public class Weather extends AOKPPreferenceFragment implements
 
         mShowLoc = (CheckBoxPreference) findPreference("show_location");
         mShowLoc.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.WEATHER_SHOW_LOCATION, 0) == 1);
+                Settings.System.WEATHER_SHOW_LOCATION, 1) == 1);
 
         mUseCelcius = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CELCIUS);
         mUseCelcius.setChecked(WeatherPrefs.getUseCelcius(mContext));

@@ -132,7 +132,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
         mLockscreenBattery = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_BATTERY);
         mLockscreenBattery.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_BATTERY, false));
+                Settings.System.LOCKSCREEN_BATTERY, true));
 
         mLockscreenMenuUnlock = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_MENU_UNLOCK);
         mLockscreenMenuUnlock.setChecked(Settings.System.getInt(getActivity()
@@ -147,7 +147,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
         mLockscreenWeather = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_WEATHER);
         mLockscreenWeather.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_WEATHER, false));
+                Settings.System.LOCKSCREEN_WEATHER, true));
 
         mLockscreenWeatherType = (ListPreference) findPreference(PREF_LOCKSCREEN_WEATHER_TYPE);
         mLockscreenWeatherType.setOnPreferenceChangeListener(this);

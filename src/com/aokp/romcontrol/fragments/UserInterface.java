@@ -166,7 +166,7 @@ public class UserInterface extends AOKPPreferenceFragment {
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
-                false));
+                true));
 
         mDisableBootAnimation = (CheckBoxPreference)findPreference("disable_bootanimation");
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
@@ -202,7 +202,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
         mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
-                Settings.System.RAM_USAGE_BAR, false));
+                Settings.System.RAM_USAGE_BAR, true));
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
@@ -246,7 +246,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
         mShowWifiName.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, false));
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, true));
 
         if (mTablet) {
             prefs.removePreference(mNotificationWallpaper);

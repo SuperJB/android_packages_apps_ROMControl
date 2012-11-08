@@ -206,7 +206,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
 
         } else if (preference == mResetToggles) {
             Settings.System.putString(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_TOGGLES, "WIFI");
+                    Settings.System.STATUSBAR_TOGGLES, "WIFI|GPS|BT|2G|DATA|ROTATE");
             return true;
         } else if (preference == mTogglesAutoHide) {
 
@@ -470,7 +470,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         if (clusterfuck == null) {
             Log.e(TAG, "clusterfuck was null");
             // return null;
-            clusterfuck = "WIFI|BT|GPS|ROTATE|SWAGGER|VIBRATE|SYNC|SILENT";
+            clusterfuck = "WIFI|GPS|BT|2G|DATA|ROTATE";
         }
 
         String[] togglesStringArray = clusterfuck.split("\\|");
