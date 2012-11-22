@@ -142,6 +142,8 @@
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In statusbar while typing</string>
+    <string name="lefty_mode_title">Lefty Mode</string>
+    <string name="lefty_mode_summary">Swap NavBar location (requires UI restart)</string>
     <string name="rotate_180_title">Allow 180 degree rotation</string>
     <string name="rotate_180_summary">Allow your device to rotate upside down!</string>
     <string name="recent_kill_all">Enable kill-all-button</string>
@@ -356,7 +358,16 @@
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
     <string name="interface_softkey_settings">Softkey Settings</string>
-    <string name="interface_softkeys_pref_default_title">Click to select activity</string>
+    <string name="interface_softkeys_pref_default_1_title">Target 1 short press activity</string>
+    <string name="interface_softkeys_pref_long_1_title">Target 1 long press activity</string>
+    <string name="interface_softkeys_pref_default_2_title">Target 2 short press activity</string>
+    <string name="interface_softkeys_pref_long_2_title">Target 2 long press activity</string>
+    <string name="interface_softkeys_pref_default_3_title">Target 3 short press activity</string>
+    <string name="interface_softkeys_pref_long_3_title">Target 3 long press activity</string>
+    <string name="interface_softkeys_pref_default_4_title">Target 4 short press activity</string>
+    <string name="interface_softkeys_pref_long_4_title">Target 4 long press activity</string>
+    <string name="interface_softkeys_pref_default_5_title">Target 5 short press activity</string>
+    <string name="interface_softkeys_pref_long_5_title">Target 5 long press activity</string>
     <string name="interface_softkeys_pref_default_summary">Tap the settings icon to select a custom long press activity</string>
     <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
     <string name="interface_softkeys_reboot_title">Reboot Menu</string>
@@ -377,6 +388,7 @@
     <string name="interface_navring_assist_title">Google Now</string>
     <string name="interface_navring">Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
+    <string name="navring_enable_long">Enable Longpress for navring</string>
 
     <!-- LED -->
     <string name="led_on">LED On</string>
@@ -473,6 +485,14 @@
     <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
+    <string name="circles_lock_cat_title">Circle lockscreen settings</string>
+    <string name="circles_lock_bg_color_title">Background color</string>
+    <string name="circles_lock_ring_color_title">Ring color</string>
+    <string name="circles_lock_ring_alpha_title">Ring alpha</string>
+    <string name="circles_lock_halo_color_title">Halo color</string>
+    <string name="circles_lock_halo_alpha_title">Halo alpha</string>
+    <string name="circles_lock_wave_color_title">Wave color</string>
+    <string name="circles_lock_wave_alpha_title">Wave alpha</string>
 
     <!-- Lockscreen Targets-->
     <string name="custom_targets">Custom lockscreen targets</string>
@@ -771,6 +791,7 @@
     <string name="power">Power</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
+    <string name="menu_power">Power menu</string>
     <string name="blank">Blank</string>
     <string name="none">None</string>
     <string name="take_screenshot">Take Screenshot</string>
@@ -798,6 +819,7 @@
     <string name="bottom_of_navbar">Bottom of navbar</string>
     <string name="regular">Regular</string>
     <string name="center_mirrored">Center-mirrored</string>
+    <string name="size_0_dp">0 dp (off)</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>
