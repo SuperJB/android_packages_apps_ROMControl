@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -19,16 +18,19 @@ import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarClock extends AOKPPreferenceFragment implements
-        ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
+                ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
-    private static final String PREF_DATE_SHORTCLICK = "date_shortclick";
-    private static final String PREF_DATE_LONGCLICK = "date_longclick";
     private static final String PREF_CLOCK_SHORTCLICK = "clock_shortclick";
     private static final String PREF_CLOCK_LONGCLICK = "clock_longclick";
+    private static final String PREF_CLOCK_DOUBLECLICK = "clock_doubleclick";
+
+    private int shortClick = 0;
+    private int longClick = 1;
+    private int doubleClick = 2;
 
     private ShortcutPickerHelper mPicker;
     private Preference mPreference;
@@ -38,10 +40,9 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
     ListPreference mClockAmPmstyle;
     ColorPickerPreference mColorPicker;
     ListPreference mClockWeekday;
-    ListPreference mDateShortClick;
-    ListPreference mDateLongClick;
     ListPreference mClockShortClick;
     ListPreference mClockLongClick;
+    ListPreference mClockDoubleClick;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,14 +76,6 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_WEEKDAY,
                 0)));
 
-        mDateShortClick = (ListPreference) findPreference(PREF_DATE_SHORTCLICK);
-        mDateShortClick.setOnPreferenceChangeListener(this);
-        mDateShortClick.setSummary(getProperSummary(mDateShortClick));
-
-        mDateLongClick = (ListPreference) findPreference(PREF_DATE_LONGCLICK);
-        mDateLongClick.setOnPreferenceChangeListener(this);
-        mDateLongClick.setSummary(getProperSummary(mDateLongClick));
-
         mClockShortClick = (ListPreference) findPreference(PREF_CLOCK_SHORTCLICK);
         mClockShortClick.setOnPreferenceChangeListener(this);
         mClockShortClick.setSummary(getProperSummary(mClockShortClick));
@@ -91,12 +84,9 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
         mClockLongClick.setOnPreferenceChangeListener(this);
         mClockLongClick.setSummary(getProperSummary(mClockLongClick));
 
-        if (mTablet) {
-            prefs.removePreference(mDateShortClick);
-            prefs.removePreference(mDateLongClick);
-            prefs.removePreference(mClockShortClick);
-            prefs.removePreference(mClockLongClick);
-        }
+        mClockDoubleClick = (ListPreference) findPreference(PREF_CLOCK_DOUBLECLICK);
+        mClockDoubleClick.setOnPreferenceChangeListener(this);
+        mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
     }
 
     @Override
@@ -128,46 +118,36 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_WEEKDAY, val);
-        } else if (preference == mDateShortClick) {
-            mPreference = preference;
-            mString = Settings.System.NOTIFICATION_DATE_SHORTCLICK;
-            if (newValue.equals("**app**")) {
-             mPicker.pickShortcut();
-            } else {
-            result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_DATE_SHORTCLICK, (String) newValue);
-            mDateShortClick.setSummary(getProperSummary(mDateShortClick));
-            }
-        } else if (preference == mDateLongClick) {
-            mPreference = preference;
-            mString = Settings.System.NOTIFICATION_DATE_LONGCLICK;
-            if (newValue.equals("**app**")) {
-             mPicker.pickShortcut();
-            } else {
-            result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_DATE_LONGCLICK, (String) newValue);
-            mDateLongClick.setSummary(getProperSummary(mDateLongClick));
-            }
         } else if (preference == mClockShortClick) {
             mPreference = preference;
-            mString = Settings.System.NOTIFICATION_CLOCK_SHORTCLICK;
+            mString = Settings.System.NOTIFICATION_CLOCK[shortClick];
             if (newValue.equals("**app**")) {
-             mPicker.pickShortcut();
+                mPicker.pickShortcut();
             } else {
-            result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_CLOCK_SHORTCLICK, (String) newValue);
-            mClockShortClick.setSummary(getProperSummary(mClockShortClick));
+                result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_CLOCK[shortClick], (String) newValue);
+                mClockShortClick.setSummary(getProperSummary(mClockShortClick));
             }
         } else if (preference == mClockLongClick) {
             mPreference = preference;
-            mString = Settings.System.NOTIFICATION_CLOCK_LONGCLICK;
+            mString = Settings.System.NOTIFICATION_CLOCK[longClick];
             if (newValue.equals("**app**")) {
-             mPicker.pickShortcut();
+                mPicker.pickShortcut();
             } else {
-            result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_CLOCK_LONGCLICK, (String) newValue);
-            mClockLongClick.setSummary(getProperSummary(mClockLongClick));
+                result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_CLOCK[longClick], (String) newValue);
+                mClockLongClick.setSummary(getProperSummary(mClockLongClick));
+            }
+        } else if (preference == mClockDoubleClick) {
+            mPreference = preference;
+            mString = Settings.System.NOTIFICATION_CLOCK[doubleClick];
+            if (newValue.equals("**app**")) {
+                mPicker.pickShortcut();
+            } else {
+                result = Settings.System.putString(getContentResolver(), Settings.System.NOTIFICATION_CLOCK[doubleClick], (String) newValue);
+                mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
             }
         }
         return result;
     }
-
     public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
           mPreference.setSummary(friendlyName);
           Settings.System.putString(getContentResolver(), mString, (String) uri);
@@ -184,14 +164,12 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
     }
 
     private String getProperSummary(Preference preference) {
-        if (preference == mDateLongClick) {
-            mString = Settings.System.NOTIFICATION_DATE_LONGCLICK;
+        if (preference == mClockDoubleClick) {
+            mString = Settings.System.NOTIFICATION_CLOCK[doubleClick];
         } else if (preference == mClockLongClick) {
-            mString = Settings.System.NOTIFICATION_CLOCK_LONGCLICK;
-        } else if (preference == mDateShortClick) {
-            mString = Settings.System.NOTIFICATION_DATE_SHORTCLICK;
+            mString = Settings.System.NOTIFICATION_CLOCK[longClick];
         } else if (preference == mClockShortClick) {
-            mString = Settings.System.NOTIFICATION_CLOCK_SHORTCLICK;
+            mString = Settings.System.NOTIFICATION_CLOCK[shortClick];
         }
 
         String uri = Settings.System.getString(getActivity().getContentResolver(),mString);
@@ -205,11 +183,13 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
                 return getResources().getString(R.string.alarm);
             else if (uri.equals("**event**"))
                 return getResources().getString(R.string.event);
-            else if (uri.equals("**assist**"))
+            else if (uri.equals("**voiceassist**"))
                 return getResources().getString(R.string.voiceassist);
+            else if (uri.equals("**clockoptions**"))
+                return getResources().getString(R.string.clock_options);
             else if (uri.equals("**today**"))
                 return getResources().getString(R.string.today);
-            else if (uri.equals("**nothing**"))
+            else if (uri.equals("**null**"))
                 return getResources().getString(R.string.nothing);
         } else {
             return mPicker.getFriendlyNameForUri(uri);

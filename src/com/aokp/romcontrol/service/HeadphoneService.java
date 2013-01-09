@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.service;
 
 import android.app.Service;
@@ -18,7 +17,7 @@ public class HeadphoneService extends Service {
     final static String TAG = "AudioReciver";
     public final static boolean DEBUG = false;
 
-    public static final String KEY_BT_AUDIO_MODE = "bt_audio_mode"; 
+    public static final String KEY_BT_AUDIO_MODE = "bt_audio_mode";
     public static final String KEY_HEADPHONE_AUDIO_MODE = "headphone_audio_mode";
     public static final int MODE_UNTOUCHED = -1;
     public static final int MODE_VIBRATE = AudioManager.RINGER_MODE_VIBRATE;
@@ -32,11 +31,11 @@ public class HeadphoneService extends Service {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            final String action = intent.getAction();  
+            final String action = intent.getAction();
 
             if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
                 final int userPreferenceAudioMode = getUserHeadphoneAudioMode(context);
-                
+
                 if (userPreferenceAudioMode == MODE_UNTOUCHED)
                     return;
 
@@ -64,11 +63,11 @@ public class HeadphoneService extends Service {
             } else if (BluetoothHeadset.ACTION_CONNECTION_STATE_CHANGED.equals(action)) {
                 log("BT Action Called");
                 final int userPreferenceAudioMode = getUserBTAudioMode(context);
-                
+
                 if (DEBUG) {
                     Log.d(TAG, "user picked audio mode = " + userPreferenceAudioMode);
                 }
-               
+
                 if (userPreferenceAudioMode == MODE_UNTOUCHED)
                     return;
 
@@ -118,14 +117,14 @@ public class HeadphoneService extends Service {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         // stored as strings from listpreference
-        return Integer.parseInt(prefs.getString(KEY_HEADPHONE_AUDIO_MODE, MODE_VIBRATE + ""));
+        return Integer.parseInt(prefs.getString(KEY_HEADPHONE_AUDIO_MODE, String.valueOf(MODE_UNTOUCHED)));
     }
-    
+
     public static int getUserBTAudioMode(Context c) {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         // stored as strings from listpreference
-        return Integer.parseInt(prefs.getString(KEY_BT_AUDIO_MODE, MODE_VIBRATE + ""));
+        return Integer.parseInt(prefs.getString(KEY_BT_AUDIO_MODE, String.valueOf(MODE_UNTOUCHED)));
     }
 
     @Override

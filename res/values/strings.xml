@@ -163,14 +163,14 @@
     <string name="error_creating_preview">Error creating preview</string>
     <string name="multipane_ui">Enable Dual panel</string>
     <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
-    <string name="alt_resolver">Use Alt Default App Grid</string>
-    <string name="alt_resolver_summary">Use Alternate (GB style) Default App Picker</string>
     <string name="show_overflow_title">Show Menu UI Overflow</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
     <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
+    <string name="brightness_slider_title">Statusbar brightness slider</string>
+    <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
 
 
     <!-- LCD Density -->
@@ -204,12 +204,15 @@
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
     <!-- Statusbar | Toggles -->
+    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
     <string name="toggles_layout_title">Toggle Layout</string>
     <string name="enabled_toggles_title">Enabled toggles</string>
     <string name="enabled_toggles_summary">Choose toggles to display</string>
     <string name="toggles_display_dialog">Choose which toggles to use</string>
+    <string name="toggles_per_row_title">Toggles per row</string>
+    <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
@@ -226,6 +229,12 @@
     <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
     <string name="toggle_btn_background_title">Toggle background alpha</string>
     <string name="toggle_text_color_title">Toggle text color</string>
+    <string name="toggle_favcontact_title">Favorite contact</string>
+    <string name="toggle_favcontact_summary">Choose your favorite contact</string>
+    <string name="toggle_enable_fasttoggle_title">Enable fast toggle</string>
+    <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
+    <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
+    <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
@@ -235,12 +244,12 @@
     <string name="colors">Colors</string>
     <string name="clock_color_title">Clock color</string>
     <string name="alarm">Alarms</string>
+    <string name="clock_options">Clock Options</string>
     <string name="nothing">Nothing</string>
     <string name="today">Calendar for today</string>
     <string name="event">Calendar new event</string>
     <string name="voiceassist">Voice commands</string>
-    <string name="title_date_longclick">Date long click actions</string>
-    <string name="title_date_shortclick">Date short click actions</string>
+    <string name="title_clock_doubleclick">Clock double click actions</string>
     <string name="title_clock_longclick">Clock long click actions</string>
     <string name="title_clock_shortclick">Clock short click actions</string>
 
@@ -248,7 +257,7 @@
     <string name="toggle_airplane_mode">Airplane Mode</string>
     <string name="toggle_auto_rotate">Auto Rotate</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Fast Charge</string>
+    <string name="toggle_fcharge">Fast Charge</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Data</string>
@@ -260,8 +269,16 @@
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Vibrate</string>
-    <string name="toggle_wifi_ap">Tether</string>
+    <string name="toggle_wifi_tether">Wifi Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_user">User</string>
+    <string name="toggle_favorite_contact">Favorite Contact</string>
+    <string name="toggle_settings">Settings</string>
+    <string name="toggle_signal">Signal</string>
+    <string name="toggle_clock">Clock</string>
+    <string name="toggle_ime">IME</string>
+    <string name="toggle_battery">Battery</string>
+    <string name="toggle_brightness">Brightness</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
@@ -354,6 +371,9 @@
     <string name="navbar_widgets_shiftLeft">Shift left</string>
     <string name="navbar_widgets_shiftRight">Shift right</string>
     <string name="navbar_widgets_delete">Delete widget</string>
+    <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
+    <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
@@ -442,6 +462,7 @@
     <string name="title_phone_flip_mode">Phone Call Silence</string>
 
     <!-- Lockscreen -->
+    <string name="lock_widgets_short">Lockscreen Widgets</string>
     <string name="lockscreen_security_cat">Security</string>
     <string name="lockscreen_layout_cat">Layout</string>
     <string name="lockscreen_music_cat">Music</string>
@@ -454,8 +475,14 @@
     <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
+    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
+    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget maker and AOKP are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
+    <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
+    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause lag issues with lockscreen.</string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
+    <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Set wether the hints for the left and right widgets are shown when the screen is turned on.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>
@@ -732,15 +759,15 @@
     <string name="help">Help</string>
     <string name="vibration_detailed_help">You can create your custom vibration patterns in 5 simple steps:\n
         - Tap New/Reset\n
-		- Tap Record\n
-		- Record your pattern by hitting the TAP! button\n
-		- Tap Stop\n
-		- Tap Save, enter a name and hit OK\n\n
-		You can check what you just recorded by tapping the Play button.\n
-		If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
-		To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
-		You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
-		You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
+        - Tap Record\n
+        - Record your pattern by hitting the TAP! button\n
+        - Tap Stop\n
+        - Tap Save, enter a name and hit OK\n\n
+        You can check what you just recorded by tapping the Play button.\n
+        If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
+        To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
+        You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
+        You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

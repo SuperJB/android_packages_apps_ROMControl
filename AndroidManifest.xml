@@ -51,15 +51,6 @@
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-         <activity
-            android:name=".fragments.StatusBarToggles"
-            android:label="@string/title_statusbar_toggles" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".fragments.StatusBarBattery"
             android:label="@string/title_statusbar_battery" >
@@ -74,6 +65,7 @@
             android:label="@string/title_navbar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
@@ -121,30 +113,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.Weather"
-            android:label="@string/title_weather" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".performance.Performance"
-            android:label="@string/title_performance" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".ShareToClipboard"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:icon="@drawable/ic_menu_clipboard"
-            android:label="@string/title_clipboard_share" >
+            android:label="@string/title_clipboard_share"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.ALTERNATIVE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/*" />
             </intent-filter>
         </activity>
@@ -155,16 +133,32 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <!-- vibration manager -->
-        <activity android:name=".fragments.Vibrations"
-                android:label="@string/vibrations">
+        <activity
+            android:name=".fragments.StatusBarToggles"
+            android:label="@string/title_statusbar_toggles" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <provider android:name=".vibrations.VibrationsProvider"
-			android:authorities="com.aokp.romcontrol.Vibrations" /> 
+
+        <!-- vibration manager -->
+        <activity
+            android:name=".fragments.Vibrations"
+            android:label="@string/vibrations" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".vibrations.VibrationsProvider"
+            android:authorities="com.aokp.romcontrol.Vibrations"
+            android:exported="true" />
+
         <activity
             android:name="CreateShortcut"
             android:theme="@style/Theme.CreateShortCut" >
@@ -174,13 +168,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".fragments.DensityChanger"
-            android:label="@string/lcd_density_wizard" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>
@@ -188,25 +175,16 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".weather.WeatherReceiver"
-            android:enabled="true" >
+            android:name=".service.ChangeFastChargeStateReceiver" >
             <intent-filter>
-                <action android:name="com.aokp.romcontrol.INTENT_WEATHER_REQUEST" />
+                <action android:name="com.aokp.romcontrol.ACTION_CHANGE_FCHARGE_STATE" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".performance.RebootReceiver"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.aokp.romcontrol.ACTION_DAILY_REBOOT" />
-                <action android:name="android.intent.action.SCREEN_OFF" />
-            </intent-filter>
-        </receiver>
-        <service android:name=".performance.DailyRebootScheduleService" />
         <service android:name=".service.BootService" />
         <service android:name=".service.HeadphoneService" />
         <service android:name=".service.FlipService" />
-        <service android:name=".weather.WeatherRefreshService" />
-        <service android:name=".weather.WeatherService" />
+        <service android:name=".service.ExternalCommandService"
+            android:exported="false" />
     </application>
+
 </manifest>

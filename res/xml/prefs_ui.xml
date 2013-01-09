@@ -4,21 +4,6 @@
 
 
     <PreferenceCategory
-        android:key="bootani"
-        android:title="@string/bootani_cat">
-
-        <Preference
-            android:key="custom_bootanimation"
-            android:title="@string/custom_bootanimation_title"
-            android:summary="@string/custom_bootanimation_summary" />
-
-         <CheckBoxPreference
-            android:key="disable_bootanimation"
-            android:title="@string/disable_bootanimation_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="notification"
         android:title="@string/notification_cat">
 
@@ -51,6 +36,14 @@
             android:title="@string/notification_show_wifi_ssid_title"
             android:summary="@string/notification_show_wifi_ssid_summary"
             android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="statusbar_brightness_slider"
+            android:title="@string/brightness_slider_title"
+            android:summary="@string/brightness_slider_summary" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="navigation_bar_alpha"
+            android:title="@string/navigation_bar_alpha_title" />
 
     </PreferenceCategory>
 
@@ -74,48 +67,7 @@
             android:title="@string/kill_app_longpress_back"
             android:summary="@string/kill_app_longpress_back_summary" />
 
-        <CheckBoxPreference
-            android:key="ime_switcher"
-            android:title="@string/ime_switcher_title"
-            android:summary="@string/ime_switcher_summary"
-            android:defaultValue="true" />
-
-        <CheckBoxPreference
-            android:key="lefty_mode"
-            android:title="@string/lefty_mode_title"
-            android:summary="@string/lefty_mode_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="tabletUI"
-        android:title="@string/tabletUI_cat">
-
-         <CheckBoxPreference
-            android:key="mode_tabletui"
-            android:title="@string/tablet_ui"
-            android:summary="@string/tablet_ui_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="force_dualpanel"
-            android:title="@string/multipane_ui"
-            android:summary="@string/multipane_ui_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="hide_extras"
-            android:title="@string/hide_extras"
-            android:summary="@string/hide_extras_summary"
-            android:defaultValue="false" />
-
-        <Preference
-            android:key="lcd_density_setup"
-            android:title="@string/lcd_density_title"
-            android:summary="@string/lcd_density_summary" />
-
-     </PreferenceCategory>
 
      <PreferenceCategory
             android:key="misc"
@@ -127,16 +79,10 @@
             android:summary="@string/rotate_180_summary" />
 
         <CheckBoxPreference
-            android:key="show_overflow"
-            android:title="@string/show_overflow_title"
-            android:summary="@string/show_overflow_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="use_alt_resolver"
-            android:title="@string/alt_resolver"
-            android:summary="@string/alt_resolver_summary"
-            android:defaultValue="false" />
+            android:key="ime_switcher"
+            android:title="@string/ime_switcher_title"
+            android:summary="@string/ime_switcher_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 

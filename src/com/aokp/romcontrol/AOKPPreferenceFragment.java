@@ -29,12 +29,12 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
 
 /**
- * Base class for Settings fragments, with some helper functions and dialog management.
+ * Base class for Settings fragments, with some helper functions and dialog
+ * management.
  */
 public class AOKPPreferenceFragment extends PreferenceFragment implements DialogCreatable {
 
@@ -44,26 +44,22 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     private SettingsDialogFragment mDialogFragment;
     protected ActionBar mActionBar;
     protected boolean mShortcutFragment;
-    protected boolean mTablet;
     protected boolean hasTorch;
     protected boolean hasHardwareButtons;
-    protected boolean hasFastCharge;
     protected boolean hasColorTuning;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasTorch = getResources().getBoolean(R.bool.has_torch);
         hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
-        hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
         mContext = getActivity();
         mActionBar = getActivity().getActionBar();
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             mShortcutFragment = getArguments().getBoolean("started_from_shortcut", false);
         }
-        if(!mShortcutFragment)
+        if (!mShortcutFragment)
             mActionBar.setDisplayHomeAsUpEnabled(true);
     }
 
@@ -72,14 +68,15 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     }
 
     /*
-     * The name is intentionally made different from Activity#finish(), so that users won't
-     * misunderstand its meaning.
+     * The name is intentionally made different from Activity#finish(), so that
+     * users won't misunderstand its meaning.
      */
     public final void finishFragment() {
         getActivity().onBackPressed();
     }
 
-    // Some helpers for functions used by the settings fragments when they were activities
+    // Some helpers for functions used by the settings fragments when they were
+    // activities
 
     /**
      * Returns the ContentResolver from the owning Activity.
@@ -128,7 +125,8 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     }
 
     protected void removeDialog(int dialogId) {
-        // mDialogFragment may not be visible yet in parent fragment's onResume().
+        // mDialogFragment may not be visible yet in parent fragment's
+        // onResume().
         // To be able to dismiss dialog at that time, don't check
         // mDialogFragment.isVisible().
         if (mDialogFragment != null && mDialogFragment.getDialogId() == dialogId) {
@@ -138,8 +136,9 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     }
 
     /**
-     * Sets the OnCancelListener of the dialog shown. This method can only be called after
-     * showDialog(int) and before removeDialog(int). The method does nothing otherwise.
+     * Sets the OnCancelListener of the dialog shown. This method can only be
+     * called after showDialog(int) and before removeDialog(int). The method
+     * does nothing otherwise.
      */
     protected void setOnCancelListener(DialogInterface.OnCancelListener listener) {
         if (mDialogFragment != null) {
@@ -148,8 +147,9 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     }
 
     /**
-     * Sets the OnDismissListener of the dialog shown. This method can only be called after
-     * showDialog(int) and before removeDialog(int). The method does nothing otherwise.
+     * Sets the OnDismissListener of the dialog shown. This method can only be
+     * called after showDialog(int) and before removeDialog(int). The method
+     * does nothing otherwise.
      */
     protected void setOnDismissListener(DialogInterface.OnDismissListener listener) {
         if (mDialogFragment != null) {
@@ -203,7 +203,8 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
                                         + DialogCreatable.class.getName());
                     }
                 }
-                // This dialog fragment could be created from non-SettingsPreferenceFragment
+                // This dialog fragment could be created from
+                // non-SettingsPreferenceFragment
                 if (mParentFragment instanceof AOKPPreferenceFragment) {
                     // restore mDialogFragment in mParentFragment
                     ((AOKPPreferenceFragment) mParentFragment).mDialogFragment = this;
@@ -236,9 +237,11 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
         public void onDetach() {
             super.onDetach();
 
-            // This dialog fragment could be created from non-SettingsPreferenceFragment
+            // This dialog fragment could be created from
+            // non-SettingsPreferenceFragment
             if (mParentFragment instanceof AOKPPreferenceFragment) {
-                // in case the dialog is not explicitly removed by removeDialog()
+                // in case the dialog is not explicitly removed by
+                // removeDialog()
                 if (((AOKPPreferenceFragment) mParentFragment).mDialogFragment == this) {
                     ((AOKPPreferenceFragment) mParentFragment).mDialogFragment = null;
                 }
@@ -274,7 +277,7 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     }
 
     protected boolean isCheckBoxPrefernceChecked(Preference p) {
-        if(p instanceof CheckBoxPreference) {
+        if (p instanceof CheckBoxPreference) {
             return ((CheckBoxPreference) p).isChecked();
         } else {
             return false;

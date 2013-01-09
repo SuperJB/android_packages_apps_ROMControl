@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.service;
 
 import android.content.BroadcastReceiver;

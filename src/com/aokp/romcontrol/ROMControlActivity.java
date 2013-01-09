@@ -5,36 +5,24 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.Switch;
 import android.widget.TextView;
-
-import com.aokp.romcontrol.service.BootService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
@@ -49,20 +37,15 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     private String mFragmentClass;
     private int mTopLevelHeaderId;
     private Header mFirstHeader;
-    private Header mCurrentHeader;
     boolean mInLocalHeaderSwitch;
 
   //  Locale defaultLocale;
 
-    boolean mTablet;
     Vibrator mVibrator;
     protected boolean isShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-        mTablet = Settings.System
-                .getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
       /*  defaultLocale = Locale.getDefault();
@@ -79,11 +62,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             // launch of
             // a specific settings screen.
             setTitle(R.string.app_name);
-        }
-
-        if (!BootService.servicesStarted) {
-            getApplicationContext().startService(
-                    new Intent(getApplicationContext(), BootService.class));
         }
 
         if ("com.aokp.romcontrol.START_NEW_FRAGMENT".equals(getIntent().getAction())) {
@@ -230,21 +208,10 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             header.fragment = fragmentClass;
             header.title = getTitle();
             header.fragmentArguments = getIntent().getExtras();
-            mCurrentHeader = header;
             return header;
         }
 
         return mFirstHeader;
-    }
-
-    @Override
-    public boolean hasNextButton() {
-        return super.hasNextButton();
-    }
-
-    @Override
-    public Button getNextButton() {
-        return super.getNextButton();
     }
 
     private void highlightHeader() {
@@ -338,7 +305,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             ImageView icon;
             TextView title;
             TextView summary;
-            Switch switch_;
         }
 
         private LayoutInflater mInflater;
@@ -456,6 +422,16 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
         startPreferencePanel(pref.getFragment(), pref.getExtras(), titleRes, null, null, 0);
         return true;
+    }
+
+    @Override
+    public boolean hasNextButton() {
+        return super.hasNextButton();
+    }
+
+    @Override
+    public Button getNextButton() {
+        return super.getNextButton();
     }
 
 }

@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.service;
 
 import android.app.Service;
@@ -180,7 +179,6 @@ public class FlipService extends Service {
             } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
                 if (mSecondReg) {
                     handler.postDelayed(screenOffTimer, getUserScreenTimeout(context));
-                    mSecondReg = false;
                 }
             } else if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(action)) {
                 final String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
@@ -188,7 +186,6 @@ public class FlipService extends Service {
                 if (state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
                     if (mSecondReg) {
                         handler.postDelayed(screenOffTimer, INSTANT_OFF);
-                        mSecondReg = false;
                     }
                 } else if (state.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
                     log("the phone is ringing");
@@ -196,7 +193,6 @@ public class FlipService extends Service {
                         log("phone doesnt need sensor when ringing");
                         if (mSecondReg) {
                             handler.postDelayed(screenOffTimer, INSTANT_OFF);
-                            mSecondReg = false;
                         }
                     } else {
                         log("phone needs the sensor when ringing");
@@ -262,6 +258,7 @@ public class FlipService extends Service {
         @Override
         public void run() {
             getSensorManager().unregisterListener(sl);
+            mSecondReg = false;
         }
     };
 

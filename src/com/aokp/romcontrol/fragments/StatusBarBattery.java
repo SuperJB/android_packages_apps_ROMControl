@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.fragments;
 
 import android.os.Bundle;
@@ -18,7 +17,6 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_BATT_ICON = "battery_icon_list";
-    private static final String PREF_BATT_NOT = "battery_not";
     private static final String PREF_BATT_BAR = "battery_bar_list";
     private static final String PREF_BATT_BAR_STYLE = "battery_bar_style";
     private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
@@ -26,7 +24,6 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
 
     ListPreference mBatteryIcon;
-    CheckBoxPreference mBatteryNotification;
     ListPreference mBatteryBar;
     ListPreference mBatteryBarStyle;
     ListPreference mBatteryBarThickness;
@@ -46,11 +43,6 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_BATTERY_ICON,
                 0))
                 + "");
-
-        mBatteryNotification = (CheckBoxPreference) findPreference(PREF_BATT_NOT);
-        mBatteryNotification.setChecked(Settings.System.getInt(
-                getActivity().getContentResolver(),
-                Settings.System.NOTIFICATION_BATTERY_DISPLAY, 0) == 1);
 
         mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
@@ -85,14 +77,7 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mBatteryNotification) {
-
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NOTIFICATION_BATTERY_DISPLAY,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
-
-        } else if (preference == mBatteryBarChargingAnimation) {
+        if (preference == mBatteryBarChargingAnimation) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,

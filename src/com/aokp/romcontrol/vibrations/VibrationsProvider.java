@@ -1,7 +1,6 @@
 
 package com.aokp.romcontrol.vibrations;
 
-//import android.R;
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -15,8 +14,6 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
-
-import com.aokp.romcontrol.R;
 
 public class VibrationsProvider extends ContentProvider
 {
@@ -41,7 +38,7 @@ public class VibrationsProvider extends ContentProvider
         uriMatcher.addURI(PROVIDER_NAME, "vibrations/#", VIBRATION_ID);
     }
 
-    private static String defaultVibrationName;
+    private static final String defaultVibrationName = "'Default'";
     private static final String defaultVibrationPattern = "'500,1000,1000,1000,1000'";
     private static final String SOSVibrationName = "'S.O.S.'";
     private static final String SOSVibrationPattern = "'500,150,150,150,150,150,400,400,400,400,400,400,400,150,150,150,150,150'";
@@ -56,7 +53,10 @@ public class VibrationsProvider extends ContentProvider
                     " (_id integer primary key autoincrement, "
                     + "name text not null, pattern text not null);";
 
-    private static String database_Init_Default;
+    private static final String DATABASE_INIT_DEFAULT =
+            "insert into names (_id, name, pattern) " +
+                    "values (" + "0" + ", " + defaultVibrationName + ", " + defaultVibrationPattern
+                    + ")";
 
     private static final String DATABASE_INIT_SOS =
             "insert into names (name, pattern) " +
@@ -72,7 +72,7 @@ public class VibrationsProvider extends ContentProvider
         public void onCreate(SQLiteDatabase db)
         {
             db.execSQL(DATABASE_CREATE);
-            db.execSQL(database_Init_Default);
+            db.execSQL(DATABASE_INIT_DEFAULT);
             db.execSQL(DATABASE_INIT_SOS);
         }
 
@@ -103,11 +103,6 @@ public class VibrationsProvider extends ContentProvider
     @Override
     public boolean onCreate() {
         Context context = getContext();
-        defaultVibrationName = context.getResources().getString(R.string.defaultvibrationname);
-        database_Init_Default =
-                "insert into names (_id, name, pattern) " +
-                        "values (" + "0" + ", " + defaultVibrationName + ", " + defaultVibrationPattern
-                        + ")";
         DatabaseHelper dbHelper = new DatabaseHelper(context);
         vibrationsDB = dbHelper.getWritableDatabase();
         return (vibrationsDB == null) ? false : true;
