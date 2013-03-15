@@ -86,9 +86,6 @@
     <string name="custom_bootanimation_title">사용자 부팅 애니메이션</string>
     <string name="custom_bootanimation_summary">sdcard에서 부팅 애니메이션을 선택합니다.이전 부팅애니메이션은 /system/media에 백업됩니다..</string>
     <string name="install_file_manager_error">선택한 zip파일로 부터 어플리케이션을 찾을수 없습니다.파일관리자에서 설치하십시오.</string>
-    <string name="notification_wallpaper_title">알림바 배경화면 선택</string>
-    <string name="notification_wallpaper_summary">이 창의 메뉴에서 배경화면을 삭제할 수 있습니다.</string>
-    <string name="notif_wallpaper_alpha_title">알림바 배경화면 투명도</string>
     <string name="alpha_dialog_title">투명도 값을 설정</string>
     <string name="custom_carrier_label_title">통신사 문구 설정</string>
     <string name="custom_carrier_label_explain">새문구를 입력하십시오.순정기본으로 전환하려면 비워두시면 됩니다.</string>

@@ -3,12 +3,10 @@ package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,46 +15,37 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.NumberPicker;
-import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.aokp.romcontrol.R;
-
-import net.margaritov.preference.colorpicker.ColorPickerDialog;
-
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
+
+import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
 import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -78,10 +67,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private ImageView mLEDButton;
     private Spinner mListApps;
     private Button mLedBrightness;
-    private NumberPicker mBrightnessNumberpicker;
     private ArrayAdapter<CharSequence> listAdapter;
 
-    private ViewGroup mContainer;
     private Activity mActivity;
     private Resources mResources;
     private ShortcutPickerHelper mPicker;
@@ -98,6 +85,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private int onBlink;
     private int offBlink;
     private int currentSelectedApp;
+    private boolean hasBrightnessFeature;
+    private boolean hasChargingFeature;
 
     private HashMap<String, CustomApps> customAppList;
     private ArrayList<String> unicornApps;
@@ -105,7 +94,6 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mContainer = container;
         mActivity = getActivity();
         mResources = getResources();
         return inflater.inflate(R.layout.led_control, container, false);
@@ -192,14 +180,20 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
             }
         });
 
-        mChargingLedOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton v, boolean checked) {
-                Helpers.setSystemProp(PROP_CHARGING_LED, checked ? "1" : "0");
-                if (DEBUG)
-                    Log.i(TAG, "Charging LED is set to: " + checked);
-            }
-        });
+        hasChargingFeature = getResources().getBoolean(R.bool.has_led_charging_feature);
 
+        if (hasChargingFeature) {
+            mChargingLedOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                public void onCheckedChanged(CompoundButton v, boolean checked) {
+                    Helpers.setSystemProp(PROP_CHARGING_LED, checked ? "1" : "0");
+                    if (DEBUG)
+                        Log.i(TAG, "Charging LED is set to: " + checked);
+                }
+            });
+        }
+        else {
+            mChargingLedOn.setVisibility(View.GONE);
+        }
 
         parseExistingAppList();
 
@@ -264,31 +258,37 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
             }
         });
 
-        mLedBrightness.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                AlertDialog.Builder b = new AlertDialog.Builder(mActivity);
-                b.setTitle(R.string.led_change_brightness);
-                b.setSingleChoiceItems(brightnessArray, Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LED_BRIGHTNESS, 1), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int item) {
-                        Helpers.setSystemProp(PROP_LED_BRIGHTNESS, String.valueOf(brightnessOutput[item]));
-                        Settings.System.putInt(mActivity.getContentResolver(),
-                                Settings.System.LED_BRIGHTNESS, item);
-                    }
-                });
-                b.setPositiveButton(com.android.internal.R.string.ok,
-                    new DialogInterface.OnClickListener() {
+        hasBrightnessFeature = getResources().getBoolean(R.bool.has_led_brightness_feature);
+
+        if (hasBrightnessFeature) {
+            mLedBrightness.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    AlertDialog.Builder b = new AlertDialog.Builder(mActivity);
+                    b.setTitle(R.string.led_change_brightness);
+                    b.setSingleChoiceItems(brightnessArray, Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LED_BRIGHTNESS, 1), new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                    }
-                });
+                        public void onClick(DialogInterface dialog, int item) {
+                            Helpers.setSystemProp(PROP_LED_BRIGHTNESS, String.valueOf(brightnessOutput[item]));
+                            Settings.System.putInt(mActivity.getContentResolver(),
+                                    Settings.System.LED_BRIGHTNESS, item);
+                        }
+                    });
+                    b.setPositiveButton(com.android.internal.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                        }
+                    });
 
-                AlertDialog alert = b.create();
-                alert.show();
-            }
-        });
-
+                    AlertDialog alert = b.create();
+                    alert.show();
+                }
+            });
+        }
+        else {
+            mLedBrightness.setVisibility(View.GONE);
+        }
 
         refreshSettings();
         startLed();
@@ -577,7 +577,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                 Notification.Builder nb = new Notification.Builder(context);
                 nb.setAutoCancel(true);
                 nb.setLights(userColor, onBlink, offBlink);
-                Notification test = nb.getNotification();
+                Notification test = nb.build();
                 nm.notify(1, test);
             } else if (action.equals(Intent.ACTION_SCREEN_ON)) {
                 nm.cancel(1);
@@ -638,7 +638,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         String packageName = null;
         final PackageManager pm = mActivity.getPackageManager();
         try {
-            Intent intent = Intent.getIntent(uri);
+            Intent intent = Intent.parseUri(uri, 0);
             packageName = intent.resolveActivity(pm).getPackageName();
             if (DEBUG)
                 Log.e(TAG, uri);

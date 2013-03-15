@@ -1,19 +1,16 @@
 package com.aokp.romcontrol.fragments;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -25,8 +22,6 @@ public class Sound extends AOKPPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
-    private static final String PREF_HEADPHONES_PLUGGED_ACTION = "headphone_audio_mode";
-    private static final String PREF_BT_CONNECTED_ACTION = "bt_audio_mode";
     private static final String PREF_FLIP_ACTION = "flip_mode";
     private static final String PREF_USER_TIMEOUT = "user_timeout";
     private static final String PREF_USER_DOWN_MS = "user_down_ms";

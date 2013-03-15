@@ -128,9 +128,6 @@
     <string name="custom_bootanimation_title">Niestandardowa boot animacja</string>
     <string name="custom_bootanimation_summary">Wybierz plik zip boot animacji. Poprzednia bootanimacja zostanie zachowana w /system/media.</string>
     <string name="install_file_manager_error">Brak aplikacji do wyboru pliku. Zainstaluj proszę menedżer plików.</string>
-    <string name="notification_wallpaper_title">Wybierz tapetę powiadomień</string>
-    <string name="notification_wallpaper_summary">Możesz usunąć tapetę z menu tego okna</string>
-    <string name="notif_wallpaper_alpha_title">Przezroczystość tła powiadomień</string>
     <string name="alpha_dialog_title">Ustaw wartość przezroczystości</string>
     <string name="custom_carrier_label_title">Własny tekst operatora</string>
     <string name="custom_carrier_label_explain">Wpisz nowy tekst. Zostaw puste by przywrócić domyślny tekst.</string>

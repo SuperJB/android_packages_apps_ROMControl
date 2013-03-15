@@ -64,7 +64,7 @@
 
         <header
         android:id="@+id/statusbar_toggles"
-        android:title="@string/title_statusbar_toggles"
+        android:title="@string/toggles_layout"
         android:fragment="com.aokp.romcontrol.fragments.StatusBarToggles"
         android:icon="@drawable/ic_rom_control_quick_settings"
         android:summary="@string/header_summary_signal" />
@@ -81,6 +81,13 @@
         android:summary="@string/header_summary_led" />
 
     <header
+        android:id="@+id/spen"
+        android:fragment="com.aokp.romcontrol.fragments.SPenGestures"
+        android:title="@string/spen_options"
+        android:icon="@drawable/ic_rom_control_spen"
+        android:summary="@string/header_summary_spen" />
+
+    <header
         android:id="@+id/sound"
         android:fragment="com.aokp.romcontrol.fragments.Sound"
         android:title="@string/sound"
@@ -91,10 +98,6 @@
         android:id="@+id/vibrations"
         android:title="@string/vibrations"
         android:summary="@string/header_summary_vibrations"
-        android:icon="@drawable/ic_rom_control_vibrations" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.aokp.romcontrol.fragments.Vibrations"
-                android:targetPackage="com.aokp.romcontrol" />
-    </header>
+        android:icon="@drawable/ic_rom_control_vibrations"
+        android:fragment="com.aokp.romcontrol.fragments.Vibrations" />
 </preference-headers>

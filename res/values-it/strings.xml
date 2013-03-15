@@ -115,9 +115,6 @@
   <string name="custom_bootanimation_title">Bootanimation personalizzata</string>
   <string name="custom_bootanimation_summary">Seleziona bootanimation dalla tua sd. Il tuo precedente bootanimation viene salvato in system/media</string>
   <string name="install_file_manager_error">nessuna applicazione trovata per quest\'azione. Installa prima un file manager come solid explorer</string>
-  <string name="notification_wallpaper_title">Scegli lo sfondo per le notifiche</string>
-  <string name="notification_wallpaper_summary">Puoi rimuovere lo sfondo dal menu in questa finestra</string>
-  <string name="notif_wallpaper_alpha_title">Trasparenza notifiche</string>
   <string name="alpha_dialog_title">Imposta il valore della trasparenza</string>
   <string name="custom_carrier_label_title">Nome operatore personalizzato</string>
   <string name="custom_carrier_label_explain">Inserisci un nuovo nome. Lascia il campo vuoto per ritornare al nome originale.</string>

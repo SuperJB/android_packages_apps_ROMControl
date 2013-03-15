@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -33,8 +34,7 @@ import android.util.Log;
 import android.widget.Button;
 
 /**
- * Base class for Settings fragments, with some helper functions and dialog
- * management.
+ * Base class for Settings fragments, with some helper functions and dialog management.
  */
 public class AOKPPreferenceFragment extends PreferenceFragment implements DialogCreatable {
 
@@ -44,15 +44,12 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     private SettingsDialogFragment mDialogFragment;
     protected ActionBar mActionBar;
     protected boolean mShortcutFragment;
-    protected boolean hasTorch;
-    protected boolean hasHardwareButtons;
     protected boolean hasColorTuning;
+    protected boolean hasVibration = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        hasTorch = getResources().getBoolean(R.bool.has_torch);
-        hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
         mContext = getActivity();
         mActionBar = getActivity().getActionBar();
@@ -61,7 +58,12 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
         }
         if (!mShortcutFragment)
             mActionBar.setDisplayHomeAsUpEnabled(true);
-    }
+ 
+        Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (mVibrator != null && mVibrator.hasVibrator()) {
+            hasVibration = true;
+        }
+   }
 
     public void setTitle(int resId) {
         getActivity().setTitle(resId);

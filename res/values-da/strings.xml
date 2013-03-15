@@ -133,9 +133,6 @@
     <string name="custom_bootanimation_title">Alternativ boot animation</string>
     <string name="custom_bootanimation_summary">Vælg bootanimation zip fra sdcard. Nuværende bootanimation vil blive gemt i /system/media.</string>
     <string name="install_file_manager_error">Ingen til at vælge zip filen fundet. Installer venligst en filmanager.</string>
-    <string name="notification_wallpaper_title">Vælg meddelelsesbaggrund</string>
-    <string name="notification_wallpaper_summary">Du kan fjerne tapetet fra menuen i dette vindue</string>
-    <string name="notif_wallpaper_alpha_title">Meddelelse baggrund gennemsigtighed</string>
     <string name="alpha_dialog_title">Sæt gennemsigtighed værdi</string>
     <string name="custom_carrier_label_title">Brugerdefineret udbyder label</string>
     <string name="custom_carrier_label_explain">Indtast en ny label. Indtast en tom label for at vende tilbage til standard.</string>

@@ -1,105 +1,87 @@
+
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Point;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
-import android.provider.MediaStore;
+import android.preference.TwoStatePreference;
 import android.provider.Settings;
-import android.text.Spannable;
-import android.util.Log;
-import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
-import com.aokp.romcontrol.widgets.SeekBarPreference;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.channels.FileChannel;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Random;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 
 public class UserInterface extends AOKPPreferenceFragment implements OnPreferenceChangeListener {
-
     public final String TAG = getClass().getSimpleName();
+    private static final boolean DEBUG = false;
 
-    private static final String PREF_180 = "rotate_180";
-    private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
-    private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
-    private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
-    private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
-    private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
-    private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
-    private static final String PREF_IME_SWITCHER = "ime_switcher";
-    private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
+    private static final CharSequence PREF_180 = "rotate_180";
+    private static final CharSequence PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+    private static final CharSequence PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final CharSequence PREF_SHOW_OVERFLOW = "show_overflow";
+    private static final CharSequence PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
+    private static final CharSequence PREF_RAM_USAGE_BAR = "ram_usage_bar";
+    private static final CharSequence PREF_IME_SWITCHER = "ime_switcher";
+    private static final CharSequence PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
+    private static final CharSequence PREF_USER_MODE_UI = "user_mode_ui";
+    private static final CharSequence PREF_HIDE_EXTRAS = "hide_extras";
+    private static final CharSequence PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final CharSequence PREF_NOTIFICATION_VIBRATE = "notification";
+    private static final CharSequence PREF_MISC = "misc";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
+    //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
+
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
     CheckBoxPreference mAllow180Rotation;
     CheckBoxPreference mStatusBarNotifCount;
-    Preference mNotificationWallpaper;
-    Preference mWallpaperAlpha;
     Preference mCustomLabel;
-    ImageView view;
-    TextView error;
+    ImageView mView;
+    TextView mError;
+    CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mVibrateOnExpand;
-    CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRamBar;
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mStatusbarSliderPreference;
-    SeekBarPreference mNavBarAlpha;
+    AlertDialog mCustomBootAnimationDialog;
+    ListPreference mUserModeUI;
+    CheckBoxPreference mHideExtras;
+    CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
 
-    private AnimationDrawable mAnimationPart1;
-    private String errormsg;
-    private int seekbarProgress;
+    private CMDProcessor mCMDProcessor = new CMDProcessor();
+    private static ContentResolver mContentResolver;
+
     String mCustomLabelText = null;
+    int mUserRotationAngles = -1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -108,66 +90,82 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_ui);
 
-        PreferenceScreen prefs = getPreferenceScreen();
+        //debug?
+        mCMDProcessor.setLogcatDebugging(DEBUG);
+
+        mContentResolver = getContentResolver();
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
-        mAllow180Rotation.setChecked(Settings.System.getInt(mContext
-                .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_ANGLES,
-                (1 | 2 | 8)) == (1 | 2 | 4 | 8));
+        mUserRotationAngles = Settings.System.getInt(mContentResolver,
+                Settings.System.ACCELEROMETER_ROTATION_ANGLES, -1);
+        if (mUserRotationAngles < 0) {
+            // Not set by user so use these defaults
+            boolean mAllowAllRotations = mContext.getResources().getBoolean(
+                            com.android.internal.R.bool.config_allowAllRotations) ? true : false;
+            mUserRotationAngles = mAllowAllRotations  ?
+                (1 | 2 | 4 | 8) : // All angles
+                (1 | 2 | 8); // All except 180
+        }
+        mAllow180Rotation.setChecked(mUserRotationAngles == (1 | 2 | 4 | 8));
 
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
-                .getContentResolver(), Settings.System.STATUSBAR_NOTIF_COUNT,
-                false));
+        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContentResolver,
+                Settings.System.STATUSBAR_NOTIF_COUNT, false));
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
-        mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
 
         mStatusbarSliderPreference = (CheckBoxPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS);
-        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, true));
 
-        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-
-        mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-
         mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
-        mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.VIBRATE_NOTIF_EXPAND, true));
-
-        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
-                Settings.System.RECENT_KILL_ALL_BUTTON, false));
+        if (!hasVibration) {
+            ((PreferenceGroup)findPreference(PREF_NOTIFICATION_VIBRATE)).removePreference(mVibrateOnExpand);
+        }
 
         mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
-        mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+        mRamBar.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RAM_USAGE_BAR, false));
 
-        mNavBarAlpha = (SeekBarPreference) findPreference("navigation_bar_alpha");
-        mNavBarAlpha.setOnPreferenceChangeListener(this);
+        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setChecked(Settings.System.getBoolean(mContentResolver,
+                        Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
+
+        mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
+        mShowActionOverflow.setChecked(Settings.System.getBoolean(mContentResolver,
+                        Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
+
+        mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
+        int uiMode = Settings.System.getInt(mContentResolver,
+                Settings.System.CURRENT_UI_MODE, 0);
+        mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContentResolver,
+                Settings.System.USER_UI_MODE, uiMode)));
+        mUserModeUI.setOnPreferenceChangeListener(this);
+
+        mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
+                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
+
+        // hide option if device is already set to never wake up
+        if(!mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
+            ((PreferenceGroup) findPreference(PREF_MISC)).removePreference(mWakeUpWhenPluggedOrUnplugged);
+        }
 
         setHasOptionsMenu(true);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(mNavBarAlpha != null) {
-            final float defaultNavAlpha = Settings.System.getFloat(getActivity()
-                    .getContentResolver(), Settings.System.NAVIGATION_BAR_ALPHA,
-                    0.8f);
-            mNavBarAlpha.setInitValue(Math.round(defaultNavAlpha * 100));
-        }
-    }
-
     private void updateCustomLabelTextSummary() {
-        mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),
+        mCustomLabelText = Settings.System.getString(mContentResolver,
                 Settings.System.CUSTOM_CARRIER_LABEL);
-        if (mCustomLabelText == null || mCustomLabelText.length() == 0) {
+        if (mCustomLabelText == null || mCustomLabelText.isEmpty()) {
             mCustomLabel.setSummary(R.string.custom_carrier_label_notset);
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
@@ -176,97 +174,43 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            final Preference preference) {
+            Preference preference) {
         if (preference == mAllow180Rotation) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(mContext.getContentResolver(),
+            boolean checked = ((TwoStatePreference) preference).isChecked();
+            Settings.System.putInt(mContentResolver,
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES,
-                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8 ));
+                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8));
             return true;
         } else if (preference == mStatusBarNotifCount) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.STATUSBAR_NOTIF_COUNT,
-                    ((CheckBoxPreference) preference).isChecked());
+                    ((TwoStatePreference) preference).isChecked());
             return true;
-        } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectY", isPortrait ? height : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                    getNotificationExternalUri());
-            intent.putExtra("outputFormat",
-                    Bitmap.CompressFormat.PNG.toString());
-            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+        } else if (preference == mHideExtras) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
+                    ((TwoStatePreference) preference).isChecked());
             return true;
-        } else if (preference == mWallpaperAlpha) {
-            Resources res = getActivity().getResources();
-            String cancel = res.getString(R.string.cancel);
-            String ok = res.getString(R.string.ok);
-            String title = res.getString(R.string.alpha_dialog_title);
-            float savedProgress = Settings.System.getFloat(getActivity()
-                        .getContentResolver(),
-                    Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
-
-            LayoutInflater factory = LayoutInflater.from(getActivity());
-            final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
-            SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
-            OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekbar,
-                        int progress, boolean fromUser) {
-                    seekbarProgress = seekbar.getProgress();
-                }
-                @Override
-                public void onStopTrackingTouch(SeekBar seekbar) {
-                }
-                @Override
-                public void onStartTrackingTouch(SeekBar seekbar) {
-                }
-            };
-            seekbar.setProgress((int) (savedProgress * 100));
-            seekbar.setMax(100);
-            seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
-            new AlertDialog.Builder(getActivity())
-                    .setTitle(title)
-                    .setView(alphaDialog)
-                    .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // nothing
-                }
-            })
-            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    float val = ((float) seekbarProgress / 100);
-                    Settings.System.putFloat(getActivity().getContentResolver(),
-                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
-                    Helpers.restartSystemUI();
-                }
-            })
-            .create()
-            .show();
+        } else if (preference == mShowActionOverflow) {
+            boolean enabled = mShowActionOverflow.isChecked();
+            Settings.System.putBoolean(mContentResolver, Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled);
+            // Show toast appropriately
+            if (enabled) {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
+                        Toast.LENGTH_LONG).show();
+            }
             return true;
         } else if (preference == mShowImeSwitcher) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
         } else if (preference == mStatusbarSliderPreference) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.STATUSBAR_BRIGHTNESS_SLIDER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
@@ -275,15 +219,15 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
 
-            // Set an EditText view to get user input
+            // Set an EditText mView to get user input
             final EditText input = new EditText(getActivity());
             input.setText(mCustomLabelText != null ? mCustomLabelText : "");
             alert.setView(input);
             alert.setPositiveButton(getResources().getString(R.string.ok),
                     new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                    String value = ((Spannable) input.getText()).toString();
-                    Settings.System.putString(getActivity().getContentResolver(),
+                    String value = input.getText().toString();
+                    Settings.System.putString(mContentResolver,
                             Settings.System.CUSTOM_CARRIER_LABEL, value);
                     updateCustomLabelTextSummary();
                     Intent i = new Intent();
@@ -297,26 +241,23 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     // Canceled.
                 }
             });
-
             alert.show();
         } else if (preference == mVibrateOnExpand) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.VIBRATE_NOTIF_EXPAND,
-                    ((CheckBoxPreference) preference).isChecked());
+                    ((TwoStatePreference) preference).isChecked());
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mRecentKillAll) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
-            return true;
         } else if (preference == mRamBar) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.RAM_USAGE_BAR, checked ? true : false);
+            boolean checked = ((TwoStatePreference) preference).isChecked();
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.RAM_USAGE_BAR, checked);
             return true;
+        } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    ((TwoStatePreference) preference).isChecked());
         }
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -330,7 +271,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.remove_wallpaper:
-                new File(mContext.getFilesDir(), WALLPAPER_NAME);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -340,7 +280,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 }).start();
                 return true;
             default:
-                return super.onContextItemSelected(item);
+                // call to super is implicit
+                return onContextItemSelected(item);
         }
     }
 
@@ -350,7 +291,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         return Uri.fromFile(wallpaper);
     }
 
-    public void onActivityResult(int requestCode, int resultCode, final Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_WALLPAPER) {
                 FileOutputStream wallpaperStream = null;
@@ -374,7 +315,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     }
                 }
                 Helpers.restartSystemUI();
-            } 
+            }
         }
     }
 
@@ -398,11 +339,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNavBarAlpha) {
-            float val = (float) (Integer.parseInt((String)newValue) * 0.01);
-            return Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_ALPHA,
-                    val);
+       if (preference == mUserModeUI) {
+            Settings.System.putInt(mContentResolver,
+                    Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
+            Helpers.restartSystemUI();
+            return true;
         }
         return false;
     }

@@ -5,13 +5,19 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -23,13 +29,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
     private static final String TAG = "ROM_Control";
-
-    private static boolean hasNotificationLed;
-  //  private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
 
     protected HashMap<Integer, Integer> mHeaderIndexMap = new HashMap<Integer, Integer>();
     private List<Header> mHeaders;
@@ -39,22 +43,22 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     private Header mFirstHeader;
     boolean mInLocalHeaderSwitch;
 
-  //  Locale defaultLocale;
-
     Vibrator mVibrator;
     protected boolean isShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-      /*  defaultLocale = Locale.getDefault();
-        Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
-        setLocale();*/
 
         mInLocalHeaderSwitch = true;
         super.onCreate(savedInstanceState);
         mInLocalHeaderSwitch = false;
+        
+        if (onIsMultiPane()){
+            Log.i(TAG, "onmultipane: true");
+        }else{
+            Log.i(TAG, "onmultipane: false");
+        }
 
         if (!onIsHidingHeaders() && onIsMultiPane()) {
             highlightHeader();
@@ -115,7 +119,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         }
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity, menu);
@@ -133,15 +137,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
-            case R.id.change_locale:
-                Log.e(TAG, "change_locale clicked");
-                SharedPreferences p = getPreferences(MODE_PRIVATE);
-                boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
-                p.edit().putBoolean(KEY_USE_ENGLISH_LOCALE, !useEnglishLocale).apply();
-                recreate();
-                return true;
             case android.R.id.home:
                 onBackPressed();
                 return true;
@@ -149,30 +145,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 return super.onContextItemSelected(item);
         }
     }
-
-    private void setLocale() {
-        SharedPreferences p = getPreferences(MODE_PRIVATE);
-        boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
-
-        if (useEnglishLocale) {
-            Locale locale = null;
-            Configuration config = null;
-            config = getBaseContext().getResources().getConfiguration();
-            locale = Locale.ENGLISH;
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        } else {
-            Locale locale = null;
-            Configuration config = null;
-            config = getBaseContext().getResources().getConfiguration();
-            locale = defaultLocale;
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-
-        }
-    }*/
 
     /**
      * Populate the activity with the top-level headers.
@@ -182,11 +154,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         loadHeadersFromResource(R.xml.preference_headers, target);
         for (int i=0; i<target.size(); i++) {
             Header header = target.get(i);
-            if (header.id == R.id.led) {
-                if (!hasNotificationLed) {
-                    target.remove(i);
-                }
-            } else if (header.id == R.id.vibrations) {
+            if (header.id == R.id.vibrations) {
                 if (mVibrator == null || !mVibrator.hasVibrator()) {
                     target.remove(i);
                 }
@@ -212,6 +180,16 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         }
 
         return mFirstHeader;
+    }
+
+    @Override
+    public boolean hasNextButton() {
+        return super.hasNextButton();
+    }
+
+    @Override
+    public Button getNextButton() {
+        return super.getNextButton();
     }
 
     private void highlightHeader() {
@@ -248,8 +226,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     @Override
     public void onResume() {
         super.onResume();
-
-        //setLocale();
 
         ListAdapter listAdapter = getListAdapter();
         if (listAdapter instanceof HeaderAdapter) {
@@ -422,16 +398,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
         startPreferencePanel(pref.getFragment(), pref.getExtras(), titleRes, null, null, 0);
         return true;
-    }
-
-    @Override
-    public boolean hasNextButton() {
-        return super.hasNextButton();
-    }
-
-    @Override
-    public Button getNextButton() {
-        return super.getNextButton();
     }
 
 }

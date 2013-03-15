@@ -7,6 +7,7 @@
     <string name="user_interface">Interface</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
+    <string name="save">Save</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navigation Bar</string>
@@ -18,12 +19,12 @@
     <string name="nav_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
     <string name="led_options">LED</string>
+    <string name="spen_options">S Pen Gestures</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
     <string name="lockscreen_options">Lockscreen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
-    <string name="performance">Performance</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">About AOKP</string>
@@ -34,6 +35,7 @@
     <string name="title_navbar">Navigation Bar</string>
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led">LED Control</string>
+    <string name="title_spen">S Pen Gestures</string>
     <string name="title_lockscreens">Lockscreen Options</string>
     <string name="title_lockscreens_targets">Lockscreen Targets</string>
     <string name="title_navring">Navigation Ring</string>
@@ -51,6 +53,7 @@
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
+    <string name="header_summary_spen">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
@@ -73,6 +76,17 @@
     <string name="title_show_torch_toggle">Show torch toggle</string>
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
     <string name="title_show_navbar_hide">Show navigation bar toggle</string>
+    <string name="title_show_reboot_keyguard">Show reboot on lockscreen</string>
+
+    <!-- S Pen -->
+    <string name="spen_left_title">Action on swipe left</string>
+    <string name="spen_right_title">Action on swipe right</string>
+    <string name="spen_up_title">Action on swipe up</string>
+    <string name="spen_down_title">Action on swipe down</string>
+    <string name="spen_double_title">Action on double tap</string>
+    <string name="spen_long_title">Action on long press</string>
+    <string name="spen_enable">Enable S Pen Gestures</string>
+    <string name="spen_enable_summary">Set custom actions for S Pen gestures</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
@@ -105,7 +119,7 @@
     <string name="about_aokp_summary">@null</string>
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
-    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_zaph">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
     <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
     <string name="donate_khasmek">http://nyan.cat</string>
     <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
@@ -118,6 +132,7 @@
     <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
     <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
 
     <!-- General UI -->
     <string name="bootani_cat">Boot Animation</string>
@@ -131,17 +146,16 @@
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="custom_bootanimation_title">Custom boot animation</string>
-    <string name="custom_bootanimation_summary">Select bootanimation zip from sdcard. Previous bootanimation will be backed up to /system/media.</string>
+    <string name="custom_bootanimation_summary">Select a custom zip from sdcard to use as your new boot animation</string>
     <string name="install_file_manager_error">No application found to pick the zip file. Please install a file manager.</string>
-    <string name="notification_wallpaper_title">Choose notification background</string>
-    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
     <string name="alpha_dialog_title">Set alpha value</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In statusbar while typing</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged/unplugged.</string>
     <string name="lefty_mode_title">Lefty Mode</string>
     <string name="lefty_mode_summary">Swap NavBar location (requires UI restart)</string>
     <string name="rotate_180_title">Allow 180 degree rotation</string>
@@ -150,14 +164,16 @@
     <string name="recent_kill_all_summary">Displays a button to kill all apps on recents window</string>
     <string name="ram_bar">Recents RAM Bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the recents menu</string>
-    <string name="kill_app_longpress_back">Hold back to kill</string>
-    <string name="kill_app_longpress_back_summary">Holding back will kill the current activity</string>
+    <string name="longpress_to_kill">Hardware back to kill</string>
+    <string name="longpress_to_kill_summary">Holding hardware back button will kill the current activity</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
     <string name="hide_extras">Hide Extras</string>
     <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat. mode button(requires UI restart)</string>
     <string name="bootanimation_preview">Bootanimation preview</string>
     <string name="apply">Apply</string>
+    <string name="clear_custom_bootanimation">Clear custom boot animation</string>
+    <string name="set_custom_bootanimation">Set custom...</string>
     <string name="creating_preview">Creating preview...</string>
     <string name="error_reading_zip_file">Error reading zip file</string>
     <string name="error_creating_preview">Error creating preview</string>
@@ -171,7 +187,19 @@
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
-
+    <string name="user_mode_ui">UI Mode</string>
+    <string name="user_mode_ui_summary">What style to display NavBar and Statusbar\nChanges will force SystemUI Restart</string>
+    <string name="phone_mode_ui">Phone - NavBar to side in landscape</string>
+    <string name="tablet_mode_ui">Tablet - Combined NavBar and SystemBar</string>
+    <string name="phablet_mode_ui">Phablet - NavBar stays at bottom in landscape</string>
+    <string name="transparency_dialog_title">Transparency settings</string>
+    <string name="transparency_dialog_linked_transparency">Link statusbar &amp; navbar alpha</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Statusbar and navigation bar</string>
+    <string name="transparency_dialog_statusbar">Statusbar</string>
+    <string name="transparency_dialog_navbar">Navigation bar</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
+    <string name="transparency_dialog_transparency">Homescreen alpha</string>
+    <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>
@@ -204,15 +232,13 @@
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
     <string name="toggles_layout_title">Toggle Layout</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_display_dialog">Choose which toggles to use</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
+    <string name="toggles_style_title">Toggles style</string>
+    <string name="toggles_style_summary">Notification (traditional) or tiles</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
@@ -235,6 +261,12 @@
     <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
+    <string name="toggle_dialog_arrange_title">Toggle setup</string>
+    <string name="toggle_dialog_add_toggles">Select toggles to add</string>
+    <string name="toggle_style_tile">Tiles</string>
+    <string name="toggle_style_traditional">Traditional</string>
+    <string name="toggle_swap_handle_side">Drag handle on right</string>
+    <string name="add_toggles">Change toggles</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
@@ -279,6 +311,9 @@
     <string name="toggle_ime">IME</string>
     <string name="toggle_battery">Battery</string>
     <string name="toggle_brightness">Brightness</string>
+    <string name="toggle_sound_state">Ring/Vib/Silent</string>
+    <string name="toggle_navbar_hide">Navbar Auto Hide</string>
+    <string name="toggle_quickrecord">Quick Record</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
@@ -314,6 +349,7 @@
 
     <!-- Navigation Bar -->
     <string name="navigation_bar">Navigation bar</string>
+    <string name="navbar_hide">NavBar Hide Options</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
@@ -331,11 +367,13 @@
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>
     <string name="navbar_action_recents">Recents</string>
+    <string name="navbar_action_recents_gb">Recents (GB style)</string>
     <string name="navbar_action_search">Search</string>
     <string name="navbar_action_screenshot">Screenshot</string>
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_lastapp">Last app</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_notifications">Notifications</string>
     <string name="navbar_action_none">Empty</string>
@@ -355,7 +393,10 @@
     <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_tint_title">Navigation bar color</string>
+    <string name="navigation_bar_color_title">Navigation bar color</string>
+    <string name="navigation_bar_tint_title">Navigation bar buttons color</string>
+    <string name="navigation_bar_colorall_title">Colorize all buttons</string>
+    <string name="navigation_bar_colorall_summary">If checked, custom icons will be colorized</string>
     <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
     <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
     <string name="glow_times_title">Button glow animation</string>
@@ -374,6 +415,18 @@
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
+    <string name="navbar_hide_enable_title">Hidden Navbar Enable</string>
+    <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
+    <string name="drag_handle_width_title">Drag Handle Width</string>
+    <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
+    <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
+    <string name="hide_navbar_timeout_never">Never</string>
+    <string name="hide_navbar_timeout_1500">1.5 Sec</string>
+    <string name="hide_navbar_timeout_3000">3 Sec</string>
+    <string name="hide_navbar_timeout_5000">5 Sec</string>
+    <string name="hide_navbar_timeout_10000">10 Sec</string>
+    <string name="hide_navbar_timeout_15000">15 Sec</string>
+    <string name="hide_navbar_timeout_30000">30 Sec</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
@@ -482,7 +535,13 @@
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Set wether the hints for the left and right widgets are shown when the screen is turned on.</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are shown when the screen is turned on.</string>
+    <string name="lockscreen_minimize_challenge_title">Minimize lockscreen challenge</string>
+    <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge (circle, pattern, pin) is minimized when the screen is turned on.</string>
+    <string name="lockscreen_longpress_challenge_title">Enable longpress to unlock</string>
+    <string name="lockscreen_longpress_challenge_summary">This enables your device to be unlocked with the widgets maximised by long pressing the lock icon.</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>
@@ -703,44 +762,6 @@
     <!-- Share to clipboard -->
     <string name="clipboard_notification">Copied to clipboard.</string>
 
-    <!-- Performance -->
-    <string name="tab_cpu_settings">"CPU Settings"</string>
-    <string name="tab_voltage_settings">"Voltage Settings"</string>
-    <string name="tab_other_settings">"Other Settings"</string>
-    <string name="current_speed">Current Speed</string>
-    <string name="current_max">Current max:</string>
-    <string name="current_min">Current min:</string>
-    <string name="governor">Governor</string>
-    <string name="io">IO Scheduler</string>
-    <string name="sob">Set on boot</string>
-    <string name="dt_free_memory">Minfree Taskkiller</string>
-    <string name="prefcat_free_memory">Free Memory</string>
-    <string name="pt_free_memory">Free memory</string>
-    <string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep | Current: %s</string>
-    <string name="pt_free_memory_boot">Set at boot</string>
-    <string name="ps_free_memory_boot">Apply the amount above at boot</string>
-    <string name="pt_fast_charge_boot">Fast Charge</string>
-    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
-    <string name="ps_volt_mhz_voltage">" MHz Voltage"</string>
-    <string name="ps_volt_save">"Save"</string>
-    <string name="ps_volt_current_voltage">"Current voltage: "</string>
-    <string name="ps_volt_setting_to_apply">"Setting to apply: "</string>
-    <string name="pt_volt_control">Voltage control</string>
-    <string name="ps_volt_control">Set voltages for each frequency</string>
-    <string name="not_supported">Your kernel does not support voltage control</string>
-    <string name="apply_values">Apply values</string>
-    <string name="freq">Frequency</string>
-    <string name="current">mV current</string>
-    <string name="saved">mV saved</string>
-    <string name="kernel">Kernel Tweaks (if supported)</string>
-    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
-    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
-    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
-    <string name="prefcat_other_tweaks">Other tweaks</string>
-    <string name="performance_daily_reboot_title">Daily reboot</string>
-    <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
-    <string name="performance_daily_reboot_summary_unscheduled">Not scheduled</string>
-
     <!-- Custom vibrations -->
     <string name="vibrations">Vibrations</string>
     <string name="defaultvibrationname">"'Default'"</string>
@@ -815,8 +836,10 @@
     <string name="toggle_widgets">Toggle Widgets</string>
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
+    <string name="lastapp">Last app</string>
     <string name="power">Power</string>
     <string name="notifications">Notifications</string>
+    <string name="recents_gb">Recents (GB style)</string>
     <string name="custom_app">Custom app</string>
     <string name="menu_power">Power menu</string>
     <string name="blank">Blank</string>
