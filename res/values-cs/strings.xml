@@ -6,7 +6,6 @@
   <string name="cancel">Zrušit</string>
   <string name="ok">OK</string>
   <string name="save">Uložit</string>
-  <string name="menu_main_activity_change_locale">Prázdné!</string>
   <string name="header_statusbar">Stavová lišta</string>
   <string name="header_navbar">Navigační lišta</string>
   <string name="toggles_layout">Přepínače</string>
@@ -115,8 +114,6 @@
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
   <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
-  <string name="vibrate_notif_expand_title">Vibrovat při vytažení</string>
-  <string name="vibrate_notif_expand_summary">Vibrovat při vytažení notifikační lišty (vyžaduje restart UI)</string>
   <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
   <string name="custom_bootanimation_title">Vlastní startovací animace</string>
   <string name="custom_bootanimation_summary">Vybrat zip z úložiště pro použití jako vlastní startovací animaci.</string>
@@ -141,8 +138,6 @@
   <string name="longpress_to_kill_summary">Podržení hw tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="tablet_ui">Vynutit tabletové UI</string>
   <string name="tablet_ui_summary">Přepne do tabletového rozhraní (vyžaduje restart)</string>
-  <string name="hide_extras">Skrýt pomůcky</string>
-  <string name="hide_extras_summary">Skrýt některé položky systémové lišty (např. tlačítko kompatibility) (vyžaduje restart UI)</string>
   <string name="bootanimation_preview">Náhled startovací animace</string>
   <string name="apply">Použít</string>
   <string name="clear_custom_bootanimation">Smazat vlastní startovací animaci</string>
@@ -158,13 +153,8 @@
   <string name="show_overflow_toast_disable">Tlačítko menu bude vidět, dokud nedojde k restartování aplikací</string>
   <string name="notification_show_wifi_ssid_title">Zobrazit název wifi sítě</string>
   <string name="notification_show_wifi_ssid_summary">Zobrazit název aktuálně připojené wifi sítě</string>
-  <string name="brightness_slider_title">Jas v notifikační liště</string>
-  <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v případě, že je vypnut automatický jas.</string>
   <string name="user_mode_ui">Rozhraní</string>
   <string name="user_mode_ui_summary">Jak se bude zobrazovat navigační a stavová lišta</string>
-  <string name="phone_mode_ui">Telefon - Navigační lišta na strně v režimu na šířku</string>
-  <string name="tablet_mode_ui">Tablet - Kombinovaná lišta s navigací i stavy</string>
-  <string name="phablet_mode_ui">Phablet - Navigační lišta zůstává dole i v režimu na šířku</string>
   <string name="transparency_dialog_title">Nastavení průhlednosti</string>
   <string name="transparency_dialog_linked_transparency">Spojit průhlednost stavové a navigační lišty</string>
   <string name="transparency_dialog_transparency_sb_and_nv">Stavová a navigační lišta</string>
@@ -284,16 +274,9 @@
   <string name="toggle_navbar_hide">Auto. skrývání navigační lišty</string>
   <string name="toggle_quickrecord">Rychlé nahrávání</string>
   <!--Statusbar | Battery-->
-  <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_not_title">Ikona baterie ve stavové liště</string>
   <string name="battery_not_summary">Baterie bude zobrazena na místě tlačítka pro vyčištění notifikací</string>
-  <string name="battery_bar">Pozice pruhu baterie</string>
   <string name="battery_bar_color">Barva pruhu baterie</string>
-  <string name="battery_bar_cat">Možnosti pruhu baterie</string>
-  <string name="battery_bar_style_title">Styl pruhu baterie</string>
-  <string name="battery_bar_thickness_title">Tloušťka pruhu baterie</string>
-  <string name="battery_bar_animate_title">Animace při nabíjení</string>
-  <string name="battery_bar_animate_summary">Povolení animace způsobuje horší odezvy systému. Zapínat pouze na vlastní nebezpečí.</string>
   <!--Statusbar | Signal-->
   <string name="signal_style">Styl ukazatele signálu</string>
   <string name="signal_color_title">Barva ukazatele signálu</string>
@@ -722,9 +705,6 @@
   <string name="help">Nápověda</string>
   <string name="vibration_detailed_help">Vytvářet vlastní vibrační vzory je možné v 5 jednoduchých krocích:\n\n    - Stisknout Nový/Reset\n\n    - Stisknout Nahrát\n\n    - Nahrát vzor mačkáním tlačítka STISK!\n\n    - Stisknout Zastavit\n\n    - Stisknout Uložit, zadat název a opět stisknout OK\n\n\n    Zkontrolovat aktuální vzor je možné ihned tlačítkem Spustit.\n\n    Upravení existujícího vzoru je možné stiskem Načíst, vybráním uloženého vzoru, znovu-nahráním a opětovným uložením (vzorb bude přepsán, i když bude zvoleno jiné jméno).\n\n    Pro smazání vibračního vzoru je třeba strisknout Smazat, vybrat vzor a poté znovu stisknout Smazat. Výchozí vibrace nemůže být smazána.\n\n\n    Výchozí vibraci pro příchozí hovory je možné zvolit v nastavení hovorů, nebo nastavení zvuku.\n \n    Též je možné přiřadit vibrační vzory jednotlivým kontaktům: po načtení kontaktu stiskem Menu/Nastavit vibrační vzor.</string>
   <!--boot animation stuff-->
-  <string name="insult_jerk">Jerk!</string>
-  <string name="insult_protekk">ProTekk!</string>
-  <string name="insult_unicorns">Růžoví jednorožci jsou pro malé holky!</string>
   <!--clock stuff-->
   <string name="right_clock">Hodiny vpravo</string>
   <string name="center_clock">Hodiny uprostřed</string>

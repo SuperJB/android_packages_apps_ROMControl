@@ -7,7 +7,6 @@
     <string name="user_interface">Interface</string>
     <string name="cancel">Annuller</string>
     <string name="ok">OK</string>
-    <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navigation Bar</string>
     <string name="toggles_layout">Toggles</string>
@@ -127,8 +126,6 @@
     <string name="enable_volume_options">Aktiver Volume Panel</string>
     <string name="status_bar_notif_count_title">Vis meddelelsesantal</string>
     <string name="status_bar_notif_count_summary">Vi antallet af afventende meddelelser i status bar</string>
-    <string name="vibrate_notif_expand_title">Vibrer ved udvidelse</string>
-    <string name="vibrate_notif_expand_summary">Vibrer ved udvidelse af meddelelser (kræver UI genstart)</string>
     <string name="disable_bootanimation_title">Deaktiver boot animation</string>
     <string name="custom_bootanimation_title">Alternativ boot animation</string>
     <string name="custom_bootanimation_summary">Vælg bootanimation zip fra sdcard. Nuværende bootanimation vil blive gemt i /system/media.</string>
@@ -149,8 +146,6 @@
     <string name="kill_app_longpress_back_summary">Hold tilbage nede for at lukke nuvænrede aktivitet</string>
     <string name="tablet_ui">Tving Tablet UI</string>
     <string name="tablet_ui_summary">Dette vil skifte til Tablet UI (kræver genstart)</string>
-    <string name="hide_extras">Gem Extras</string>
-    <string name="hide_extras_summary">Gem nogen systembar indstillinger f.eks. kompatibilitetsknap (kræver UI genstart)</string>
     <string name="bootanimation_preview">Bootanimation forhåndsvisning</string>
     <string name="apply">Anvend</string>
     <string name="creating_preview">Laver forhåndsvisning...</string>
@@ -256,16 +251,9 @@
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Batteri ikon stil</string>
     <string name="battery_not_title">Batteri ikon i meddelelser</string>
     <string name="battery_not_summary">Batteri ikon vil vises hvor slet alt knappen er</string>
-    <string name="battery_bar">Batteri bar placering</string>
     <string name="battery_bar_color">Batteri bar farve</string>
-    <string name="battery_bar_cat">Batteri bar indstillinger</string>
-    <string name="battery_bar_style_title">Batteri bar stil</string>
-    <string name="battery_bar_thickness_title">Batteri bar tykkelse</string>
-    <string name="battery_bar_animate_title">Opladning animation</string>
-    <string name="battery_bar_animate_summary">Opladning animation kan resultere i en dårlig brugeroplevelse. Aktiver på dit eget skøn.</string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Signal tekst stil</string>
@@ -715,8 +703,6 @@
         Du kan tilføje alternative vibrationsmønstre til kontakter i Personer appen: efter du har åbnet en kontakt tryk Menu/Sæt vibration.</string>
 
     <!-- boot animation stuff -->
-    <string name="insult_jerk">Klovn!</string>
-    <string name="insult_protekk">ProTekk!</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Højre clock</string>

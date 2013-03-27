@@ -239,24 +239,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
         return false;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.lockscreens, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.remove_wallpaper:
-                Log.e(TAG, mContext.deleteFile(WALLPAPER_NAME) + "");
-                Log.e(TAG, mContext.deleteFile(WALLPAPER_NAME) + "");
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
     private Uri getLockscreenExternalUri() {
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);

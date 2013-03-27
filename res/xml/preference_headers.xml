@@ -30,23 +30,9 @@
         android:icon="@drawable/ic_rom_control_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
-     <header
-        android:id="@+id/nav_bar"
-        android:fragment="com.aokp.romcontrol.fragments.Navbar"
-        android:title="@string/nav_bar"
-        android:icon="@drawable/ic_rom_control_navigation_bar"
-        android:summary="@string/header_summary_navigation_bar" />
-
     <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
-
-    <header
-        android:id="@+id/statusbar_battery"
-        android:title="@string/battery"
-        android:fragment="com.aokp.romcontrol.fragments.StatusBarBattery"
-        android:icon="@drawable/ic_rom_control_battery"
-        android:summary="@string/header_summary_battery" />
 
     <header
         android:id="@+id/statusbar_clock"
@@ -79,13 +65,6 @@
         android:title="@string/led_options"
         android:icon="@drawable/ic_rom_control_led"
         android:summary="@string/header_summary_led" />
-
-    <header
-        android:id="@+id/spen"
-        android:fragment="com.aokp.romcontrol.fragments.SPenGestures"
-        android:title="@string/spen_options"
-        android:icon="@drawable/ic_rom_control_spen"
-        android:summary="@string/header_summary_spen" />
 
     <header
         android:id="@+id/sound"

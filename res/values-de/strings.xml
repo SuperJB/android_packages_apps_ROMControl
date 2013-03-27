@@ -252,15 +252,8 @@
     <string name="statusbar_fontsize_summary">Ändert die Größe der Textelemente</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Aussehen des Batteriesymbols</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_bar">Position der Batterieleiste</string>
     <string name="battery_bar_color">Farbe der Batterieleiste</string>
-    <string name="battery_bar_cat">Einstellungen der Batterieleiste</string>
-    <string name="battery_bar_style_title">Aussehen der Batterieleiste</string>
-    <string name="battery_bar_thickness_title">Höhe der Batterieleiste</string>
-    <string name="battery_bar_animate_title">Ladeanimation</string>
-    <string name="battery_bar_animate_summary">Die Ladeanimation kann zu einer schlechteren Leistung führen. Verwenden nach eigenem Ermessen!</string>
 
 
     <!-- Statusbar | Clock -->

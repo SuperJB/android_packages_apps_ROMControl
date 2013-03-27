@@ -5,18 +5,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,19 +24,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
-
-    private static final String TAG = "ROM_Control";
 
     protected HashMap<Integer, Integer> mHeaderIndexMap = new HashMap<Integer, Integer>();
     private List<Header> mHeaders;
 
     private String mFragmentClass;
-    private int mTopLevelHeaderId;
     private Header mFirstHeader;
-    boolean mInLocalHeaderSwitch;
 
     Vibrator mVibrator;
     protected boolean isShortcut;
@@ -50,24 +40,8 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     public void onCreate(Bundle savedInstanceState) {
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-        mInLocalHeaderSwitch = true;
         super.onCreate(savedInstanceState);
-        mInLocalHeaderSwitch = false;
         
-        if (onIsMultiPane()){
-            Log.i(TAG, "onmultipane: true");
-        }else{
-            Log.i(TAG, "onmultipane: false");
-        }
-
-        if (!onIsHidingHeaders() && onIsMultiPane()) {
-            highlightHeader();
-            // Force the title so that it doesn't get overridden by a direct
-            // launch of
-            // a specific settings screen.
-            setTitle(R.string.app_name);
-        }
-
         if ("com.aokp.romcontrol.START_NEW_FRAGMENT".equals(getIntent().getAction())) {
             String className = getIntent().getStringExtra("aokp_fragment_name").toString();
             Class<?> cls = null;
@@ -117,22 +91,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_activity, menu);
-
-        MenuItem locale = menu.findItem(R.id.change_locale);
-
-        if (Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage())) {
-            menu.removeItem(R.id.change_locale);
-        } else {
-            Configuration config = getBaseContext().getResources().getConfiguration();
-            locale.setTitle("Locale (" + config.locale.getDisplayLanguage() + ")");
-        }
-        return true;
     }
 
     @Override
@@ -190,16 +148,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     @Override
     public Button getNextButton() {
         return super.getNextButton();
-    }
-
-    private void highlightHeader() {
-        if (mTopLevelHeaderId != 0) {
-            Integer index = mHeaderIndexMap.get(mTopLevelHeaderId);
-            if (index != null) {
-                getListView().setItemChecked(index, true);
-                getListView().smoothScrollToPosition(index);
-            }
-        }
     }
 
     private void updateHeaderList(List<Header> target) {

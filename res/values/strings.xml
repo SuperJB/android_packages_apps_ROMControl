@@ -8,7 +8,6 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="save">Save</string>
-    <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navigation Bar</string>
     <string name="toggles_layout">Toggles</string>
@@ -142,8 +141,6 @@
     <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
-    <string name="vibrate_notif_expand_title">Vibrate on expand</string>
-    <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="custom_bootanimation_title">Custom boot animation</string>
     <string name="custom_bootanimation_summary">Select a custom zip from sdcard to use as your new boot animation</string>
@@ -168,8 +165,6 @@
     <string name="longpress_to_kill_summary">Holding hardware back button will kill the current activity</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
-    <string name="hide_extras">Hide Extras</string>
-    <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat. mode button(requires UI restart)</string>
     <string name="bootanimation_preview">Bootanimation preview</string>
     <string name="apply">Apply</string>
     <string name="clear_custom_bootanimation">Clear custom boot animation</string>
@@ -185,13 +180,8 @@
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
     <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
-    <string name="brightness_slider_title">Statusbar brightness slider</string>
-    <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
     <string name="user_mode_ui">UI Mode</string>
     <string name="user_mode_ui_summary">What style to display NavBar and Statusbar\nChanges will force SystemUI Restart</string>
-    <string name="phone_mode_ui">Phone - NavBar to side in landscape</string>
-    <string name="tablet_mode_ui">Tablet - Combined NavBar and SystemBar</string>
-    <string name="phablet_mode_ui">Phablet - NavBar stays at bottom in landscape</string>
     <string name="transparency_dialog_title">Transparency settings</string>
     <string name="transparency_dialog_linked_transparency">Link statusbar &amp; navbar alpha</string>
     <string name="transparency_dialog_transparency_sb_and_nv">Statusbar and navigation bar</string>
@@ -316,16 +306,9 @@
     <string name="toggle_quickrecord">Quick Record</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Battery icon style</string>
     <string name="battery_not_title">Battery icon in notifications</string>
     <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
-    <string name="battery_bar">Battery bar location</string>
     <string name="battery_bar_color">Battery bar color</string>
-    <string name="battery_bar_cat">Battery bar options</string>
-    <string name="battery_bar_style_title">Battery bar style</string>
-    <string name="battery_bar_thickness_title">Battery bar thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Signal text style</string>
@@ -791,9 +774,6 @@
         You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
 
     <!-- boot animation stuff -->
-    <string name="insult_jerk">Jerk!</string>
-    <string name="insult_protekk">ProTekk!</string>
-    <string name="insult_unicorns">Concede pink unicorns are for little girls</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Right clock</string>

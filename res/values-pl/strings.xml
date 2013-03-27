@@ -7,7 +7,6 @@
     <string name="user_interface">Interfejs</string>
     <string name="cancel">Anuluj</string>
     <string name="ok">OK</string>
-    <string name="menu_main_activity_change_locale">Czysty!</string>
     <string name="header_statusbar">Pasek statusu</string>
     <string name="header_navbar">Belka nawigacyjna</string>
     <string name="toggles_layout">Przełączniki</string>
@@ -229,16 +228,9 @@
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Styl ikony baterii</string>
     <string name="battery_not_title">Ikona baterii w pasku powiadomień</string>
     <string name="battery_not_summary">Ikona baterii pojawi się w miejscu przycisku czyszczenia powiadomień</string>
-    <string name="battery_bar">Lokalizacja ikony baterii</string>
     <string name="battery_bar_color">Kolor paska baterii</string>
-    <string name="battery_bar_cat">Opcje ikony baterii</string>
-    <string name="battery_bar_style_title">Styl paska baterii</string>
-    <string name="battery_bar_thickness_title">Grubość paska baterii</string>
-    <string name="battery_bar_animate_title">Animacja ładowania</string>
-    <string name="battery_bar_animate_summary">Animacja ładowania może powodować problemy w użytkowaniu telefonu.</string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Styl sygnału</string>
@@ -599,8 +591,6 @@
         Możesz również przypisać swoje ścieżki wibracji do określonych kontatków w aplikacji Osoby: po wyświetleniu kontaktu stuknij Menu/Ustaw wibrację.</string>
 
     <!-- boot animation stuff -->
-    <string name="insult_jerk">Jerk!</string>
-    <string name="insult_protekk">ProTekk!</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Zegar z prawej</string>

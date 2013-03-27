@@ -7,7 +7,6 @@
     <string name="user_interface">Felhasználói felület</string>
     <string name="cancel">Mégse</string>
     <string name="ok">OK</string>
-    <string name="menu_main_activity_change_locale">Üres!</string>
     <string name="header_statusbar">Állapotsáv</string>
     <string name="header_navbar">Navigációs sáv</string>
     <string name="toggles_layout">Kapcsolók</string>
@@ -129,8 +128,6 @@
     <string name="enable_volume_options">Hang panel engedélyezése</string>
     <string name="status_bar_notif_count_title">Értesítésí számláló</string>
     <string name="status_bar_notif_count_summary">Megjelenití az értesítések számát a navigációs sávon</string>
-    <string name="vibrate_notif_expand_title">Rezgés nyitásra</string>
-    <string name="vibrate_notif_expand_summary">Rezeg mikor szétnyitod az értesítést (UI újraindítás szükséges)</string>
     <string name="disable_bootanimation_title">Bootanimáció tiltása</string>
     <string name="custom_bootanimation_title">Egyedi bootanimáció</string>
     <string name="custom_bootanimation_summary">Bootanimáció zip kiválasztása. Eredeti mentési helye /system/media.</string>
@@ -155,8 +152,6 @@
     <string name="kill_app_longpress_back_summary">Vissza gombra fogja bezárni a futó alkalmazást</string>
     <string name="tablet_ui">Tábla mód</string>
     <string name="tablet_ui_summary">Tábla módba fogja állítani (újra indítás szüksége)</string>
-    <string name="hide_extras">Extrák elrejtése</string>
-    <string name="hide_extras_summary">Némely extra alkalmazás elrejtése (UI újraindítás szükséges)</string>
     <string name="bootanimation_preview">Bootanimáció előnézet</string>
     <string name="apply">Mehet</string>
     <string name="creating_preview">Előnézet készítés...</string>
@@ -172,13 +167,8 @@
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
     <string name="notification_show_wifi_ssid_title">Wif hálózat név mutatása</string>
     <string name="notification_show_wifi_ssid_summary">Az aktuálisan kapcsolódott Wifi hálózat nevét kirja</string>
-    <string name="brightness_slider_title">Értesitési sáv fényerő csúszka</string>
-    <string name="brightness_slider_summary">Engedélyezi a csúsztatással való fényerő állítást az értesítési sáv tetején. Autó fényerő állításnál nem történik semmi.</string>
     <string name="user_mode_ui">Felhasználói felület</string>
     <string name="user_mode_ui_summary">Milyen stílusú legyen az értesítési/állapot sáv. SystemUI újraindul.</string>
-    <string name="phone_mode_ui">Phone - NavBar oldalt fekvőmódban</string>
-    <string name="tablet_mode_ui">Tablet - Kombinált NavBar és SystemBar</string>
-    <string name="phablet_mode_ui">Phablet - NavBar felül marad fekvőmódban</string>
     <string name="transparency_dialog_title">Áttetszőség beállításai</string>
     <string name="transparency_dialog_linked_transparency">Kapcsolat értesítési sáv &amp; navigációs sáv között</string>
     <string name="transparency_dialog_transparency_sb_and_nv">Értesítési sáv és navigációs sáv</string>
@@ -286,16 +276,9 @@
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Akksi ikon stílusa</string>
     <string name="battery_not_title">Akksi ikon az értesítési sávon</string>
     <string name="battery_not_summary">Akksi ikon megjelenítése a törlés gombnál</string>
-    <string name="battery_bar">Akksi sáv helye</string>
     <string name="battery_bar_color">Akksi sáv színe</string>
-    <string name="battery_bar_cat">Akksi sáv beállítás</string>
-    <string name="battery_bar_style_title">Stílusa</string>
-    <string name="battery_bar_thickness_title">Vastagsága</string>
-    <string name="battery_bar_animate_title">Töltési animáció</string>
-    <string name="battery_bar_animate_summary">Akadozhat! Ha nem tetszik, kapcsold ki.</string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Jel szöveg stílusa</string>
@@ -773,8 +756,6 @@
 		Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
 
     <!-- boot animation stuff -->
-    <string name="insult_jerk">Jerk!</string>
-    <string name="insult_protekk">ProTekk!</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Jobb oldalon</string>

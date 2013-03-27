@@ -4,7 +4,6 @@
     <string name="user_interface">Arayüz</string>
     <string name="cancel">İptal</string>
     <string name="ok">Tamam</string>
-    <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Durum Çubuğu</string>
     <string name="header_navbar">Yazılımsal Tuş</string>
     <string name="toggles_layout">Kısayollar</string>
@@ -103,8 +102,6 @@
     <string name="enable_volume_options">Ses Panelini Etkinleştir</string>
     <string name="status_bar_notif_count_title">Bildirim Sayısını Göster</string>
     <string name="status_bar_notif_count_summary">Durum çubuğunda bekleyen bildirimlerin sayısını göster</string>
-    <string name="vibrate_notif_expand_title">Genişletildiğinde Titreşim</string>
-    <string name="vibrate_notif_expand_summary">Genişletilmiş bildirimlerde titreşim (Arayüz yeniden başlatılır)</string>
     <string name="disable_bootanimation_title">Yükleme animasyonu devre dışı</string>
     <string name="custom_bootanimation_title">Özel yükleme animasyonu</string>
     <string name="custom_bootanimation_summary">Kullanacağınız özel ön yükleme animasyonu için sd kartınızdan zip dosyanızı seçin</string>
@@ -127,8 +124,6 @@
     <string name="kill_app_longpress_back_summary">Geri tuşuna uzun basarak aktif uygulamayı kapatabilirsiniz</string>
     <string name="tablet_ui">Tablet Arayüzü</string>
     <string name="tablet_ui_summary">Tablet Arayüzüne geçecektir (Yeniden başlatmak gerekir)</string>
-    <string name="hide_extras">Ekstraları gizle</string>
-    <string name="hide_extras_summary">Sistem çubuğunda mod butonunu gizle.(Sistem Arayüzü yeniden başlatılır)</string>
     <string name="bootanimation_preview">Yükleme animasyonu </string>
     <string name="apply">Uygula</string>
     <string name="clear_custom_bootanimation">Özel yükleme animasyonunu temizle</string>
@@ -144,8 +139,6 @@
     <string name="show_overflow_toast_disable">Uygulamalar yeniden başlatılana kadar menü taşma tuşu gizli olabilir</string>
     <string name="notification_show_wifi_ssid_title">Wifi ağ adını göster</string>
     <string name="notification_show_wifi_ssid_summary">Ekranda mevcut olan bağlı Wifi ağ adını görüntüle</string>
-    <string name="brightness_slider_title">Durum çubuğu parlaklık kaydırıcı</string>
-    <string name="brightness_slider_summary">Durum çubuğu üzerinde ekran parlaklığını parmağınızı sağa sola kaydırarak değiştirin. Otomatik parklaklık etkin olduğunda çalışmaz.</string>
     <string name="lcd_density_title">LCD Yoğunluğu</string>
     <string name="lcd_density_summary">Bilinmeyen</string>
     <string name="current_lcd_density">"Mevcut LCD Yoğunluğu: "</string>
@@ -246,16 +239,9 @@
     <string name="toggle_battery">Pil</string>
     <string name="toggle_brightness">Parlaklık</string>
     <string name="toggle_sound_state">Zil/Titr./Sessiz</string>
-    <string name="battery_icon">Batarya Simge Tarzı</string>
     <string name="battery_not_title">Bildirimlerdeki batarya simgesi</string>
     <string name="battery_not_summary">Bu seçenek işaretlendiğinde batarya simgesi bildirim çubuğunu indirdiğinizde de görülecektir.</string>
-    <string name="battery_bar">Batarya çubuk konumu</string>
     <string name="battery_bar_color">Batarya çubuk rengi</string>
-    <string name="battery_bar_cat">Batarya çubuk seçenekleri</string>
-    <string name="battery_bar_style_title">Batarya çubuk tarzı</string>
-    <string name="battery_bar_thickness_title">Batarya çubuk kalınlığı</string>
-    <string name="battery_bar_animate_title">Şarj animasyonu</string>
-    <string name="battery_bar_animate_summary">Şarj animasyonu kötü kullanıcı deneyimlerine sebep olabilir. Kendi takdirinize kalmış.</string>
     <string name="signal_style">Sinyal işaret tarzı</string>
     <string name="signal_color_title">İşaret rengi</string>
     <string name="hide_signal_title">İşaret çubuğunu gizle</string>
@@ -660,9 +646,6 @@
 
  Telefonunuzda aramalar için varsayılan titreşimi Telefon/Ayarlar yada Ayarlar/Ses içinden seçebilirsiniz.
  Siz telefonunuzdaki kayıtlı kişilere özel desenler oluşturabilirsiniz: Kişi yüklendikten sonra Menü/Ayarla butonuna dokunun."</string>
-    <string name="insult_jerk">Jerk!</string>
-    <string name="insult_protekk">ProTekk!</string>
-    <string name="insult_unicorns">Kabul edin pembe boynuzlu atlar küçük kızlar içindir</string>
     <string name="right_clock">Saat sağda</string>
     <string name="center_clock">Saat ortada</string>
     <string name="no_clock">Saat yok</string>
