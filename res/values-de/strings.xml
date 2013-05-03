@@ -57,8 +57,6 @@
     <string name="navbar_qty_title">Anzahl der Navigationsknöpfe</string>
     <string name="navbar_qty_summary">Wähle die Anzahl der Navigationsknöpfe</string>
 
-    <string name="enabled_navbar_buttons_title">Aktivierte Navigations-Buttons</string>
-    <string name="enabled_navbar_buttons_summary">Auswählen, welche Navigations-Buttons sichtbar sein sollen.</string>
 
     <string name="navbar_action_title">Knopf %1$s Aktion &amp; Icon</string>
     <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem Drücken</string>
@@ -141,7 +139,6 @@
 
     <string name="title_pref_lockscreen_menu_unlock">Mit Menü-Taste entsperren</string>
     <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt den Bildschirm. (Neustart erforderlich)</string>
-    <string name="title_lockscreen_user_timeout_override">Wartezeit zum Sperren des Bildschirms</string>
     <string name="summary_lockscreen_user_timeout_override">Android\'s Timeout Einstellung verwenden, nachdem der Bildschirm manuell ausgeschaltet wurde. Normalerweise wird das Telefon sofort gesperrt, wenn der Bildschirm manuell ausgeschaltet wird.</string>
     <string name="show_lock_before_unlock_title">Bildschirmsperre vor dem Entsperren</string>
     <string name="show_lock_before_unlock_summary">Zeige die Standard Bildschirmsperre vor dem sicheren Entsperren.</string>
@@ -149,8 +146,6 @@
     <string name="lockscreen_battery_summary">Immer die aktuelle Kapazität der Batterie in der Bildschirmsperre anzeigen (in Prozent).</string>
     <string name="lockscreen_weather_title">Wetter</string>
     <string name="lockscreen_weather_summary">Wetter-Informationen in der Bildschirmsperre anzeigen. ROM-Control\'s Wetter-Service muss hierfür eingeschaltet sein.</string>
-    <string name="volume_wake_title">Aufwachen mit Lautstärketasten</string>
-    <string name="volume_wake_summary">Betätigen der Lautstärketasten schaltet den Bildschirm wieder ein.</string>
     <string name="volume_music_controls_title">Musik-Steuerung mit Lautstärketasten</string>
     <string name="volume_music_controls_summary">Lautstärketasten gedrückt halten um Lieder zu überspringen wenn der Bildschirm ausgeschaltet ist. Aufwachen mit Lautsärketasten funktioniert nicht, wenn Musik gespielt wird.</string>
     <string name="lockscreen_show_nav_title">Navigationsleiste verstecken</string>
@@ -168,11 +163,8 @@
     <string name="lockscreen_landscape_summary">Horizontale Ausrichtung der Bildschirmsperre aktivieren</string>
     <string name="lockscreen_quick_unlock_control_title">Schnelles Entsperren</string>
     <string name="lockscreen_quick_unlock_control_summary">Bildschirmsperre mit Passwort/PIN entsperren ohne Enter zu drücken.</string>
-    <string name="enable_fast_torch_title">Taschenlampe aktivieren</string>
-    <string name="enable_fast_torch_summary">Während der Bildschirm ausgeschaltet ist, den An-/Aus-Schalter lange gedrückt halten, um das LED Licht anzuschalten. Geht beim Loslassen des Schalters wieder aus.</string>
     <string name="lockscreen_wallpaper_title">Hintergrund wählen</string>
     <string name="lockscreen_wallpaper_summary">Wähle für den im Menü gewählten Hintergrund einen Alternativen für die Bildschirmsperre.</string>
-    <string name="lockscreen_text_color_title">Text Farbe</string>
     <string name="lockscreen_calendar">Lockscreen Kalender</string>
     <string name="lockscreen_calendar_title">Aktivieren</string>
     <string name="lockscreen_calendar_summary">Zeige kommende Veranstaltungen auf dem Entsperrbildschirm.</string>
@@ -220,9 +212,7 @@
     <string name="sync_mobile_data_preference">Präferenz der mobilen Datensyncronisation</string>
 
     <!--  LED -->
-    <string name="title_led_on">LED AN Dauer</string>
     <string name="summary_led_on">@null</string>
-    <string name="title_led_off">LED AUS Dauer</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">LED Farbe</string>
     <string name="title_led_screen_on">LED-Blitz während der Bildschirm aktiv ist</string>
@@ -277,7 +267,6 @@
     <string name="enabled_toggles_title">Aktivierte Schalter</string>
     <string name="enabled_toggles_summary">Die anzuzeigenden Schalter wählen.</string>
 
-    <string name="toggles_display_dialog">Wähle zu benutzende Schalter:</string>
     <string name="toggles_display_close">Schließen</string>
 
     <string name="toggles_order_title">Reihenfolge der Schalter</string>
@@ -423,8 +412,6 @@
     <string name="ps_free_memory_boot">Oben angegebene Menge beim Startvorgang übernehmen</string>
 
     <!-- Toast Messages -->
-    <string name="toast_min_max_error01">Max. CPU kann nicht niedriger sein als min. CPU</string>
-    <string name="toast_min_max_error02">Min. CPU kann nicht höher sein als max. CPU</string>
 
     <!-- list_voltage -->
     <string name="freq">Frequenz</string>
@@ -530,5 +517,7 @@
     <string name="direction_south_west">SW</string>
     <string name="direction_west">W</string>
     <string name="direction_north_west">NW</string>
+
+    <string name="toggles_display_dialog">Wähle zu benutzende Schalter:</string>
 
 </resources>

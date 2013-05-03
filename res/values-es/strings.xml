@@ -199,7 +199,6 @@
     <string name="toggles_layout_title">Tipo de interruptores</string>
     <string name="enabled_toggles_title">Activar interruptores</string>
     <string name="enabled_toggles_summary">Interruptores que se visualizaran</string>
-    <string name="toggles_display_dialog">Escoger interruptores a visualizar</string>
     <string name="toggles_per_row_title">Toggles por fila</string>
     <string name="toggles_per_row_summary">Elija cuántos toggles mostrar por fila</string>
     <string name="toggles_display_close">Cerrar</string>
@@ -242,7 +241,6 @@
     <string name="toggle_airplane_mode">Modo Vuelo</string>
     <string name="toggle_auto_rotate">Auto Rotar</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Carga rápida</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Datos</string>
@@ -433,7 +431,6 @@
     <string name="title_phone_flip_mode">Silenciar llamadas</string>
 
     <!-- Lockscreen -->
-    <string name="lock_widgets_short">Widgets en pantalla de bloqueo</string>
     <string name="lockscreen_security_cat">Seguridad</string>
     <string name="lockscreen_layout_cat">Diseño</string>
     <string name="lockscreen_music_cat">Musica</string>
@@ -446,10 +443,6 @@
     <string name="lockscreen_menu_unlock_summary">Usar los botones de menú para desbloquear la pantalla</string>
     <string name="lockscreen_auto_rotate_title">Permitir rotación de pantalla de desbloqueo</string>
     <string name="lockscreen_auto_rotate_summary">La pantalla de desbloqueo podrá rotar según su orientación. Este ajuste es independiente a la rotación de la pantalla principal</string>
-    <string name="lockscreen_all_widgets_title">Permitir a todos los widgets</string>
-    <string name="lockscreen_all_widgets_summary">Advertencia** Algunos widgets no están destinados a ser utilizados en la pantalla de bloqueo, el fabricante del widget y AOKP no son responsables de la elección de los widgets.Elige responsablemente.</string>
-    <string name="lockscreen_unlimited_widgets_title">Permitir widgets sin limites</string>
-    <string name="lockscreen_unlimited_widgets_summary">Advertencia** Agregar muchos widgets puede ocasionar demasiados problemas de lag en la pantalla de bloqueo.</string>
     <string name="lockscreen_battery_title">Porcentaje de batería en pantalla de desbloqueo</string>
     <string name="lockscreen_battery_summary">Mostrar siempre el porcentaje de la batería en pantalla de desbloqueo</string>
     <string name="volume_rocker_wake_title">Desbloquear con volumen</string>
@@ -460,7 +453,6 @@
     <string name="lockscreen_stock_music_layout_summary">Usar diseño stock</string>
     <string name="lockscreen_wallpaper_title">Fondo de pantalla de desbloqueo</string>
     <string name="lockscreen_wallpaper_summary">Puede quitar el fondo de pantalla desde el menú de esta pantalla</string>
-    <string name="lockscreen_text_color_title">Color de texto de Pantalla de desbloqueo</string>
     <string name="lockscreen_weather_title">Activado</string>
     <string name="lockscreen_weather_summary">Ver información meteorológica en la pantalla de desbloqueo. Debe activar la información meteorológica en ROMControl para poder usar esta opción</string>
     <string name="lockscreen_weather_type_title">Tiempo en pantalla de desbloqueo</string>
@@ -906,4 +898,6 @@
     <!-- haptic feedback on toggle press -->
     <string name="toggles_enable_haptic_feedback_title">Activar haptic feedback</string>
     <string name="toggles_enable_haptic_feedback_summary">Vibrar al presionar los toggles</string>
+    <string name="toggles_display_dialog">Escoger interruptores a visualizar</string>
+
 </resources>

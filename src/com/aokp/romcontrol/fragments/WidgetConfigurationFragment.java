@@ -17,7 +17,6 @@ import android.provider.Settings;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,6 @@ import java.util.ArrayList;
 
 public class WidgetConfigurationFragment extends DialogFragment {
 
-    private static final String TAG = "Widget";
     public static final String ACTION_ALLOCATE_ID = "com.android.systemui.ACTION_ALLOCATE_ID";
     public static final String ACTION_DEALLOCATE_ID = "com.android.systemui.ACTION_DEALLOCATE_ID";
     public static final String ACTION_SEND_ID = "com.android.systemui.ACTION_SEND_ID";

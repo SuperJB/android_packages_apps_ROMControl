@@ -196,7 +196,6 @@
     <string name="toggles_layout_title">Toggle Layout</string>
     <string name="enabled_toggles_title">Aktiverede toggles</string>
     <string name="enabled_toggles_summary">Vælg toggles der skal vises</string>
-    <string name="toggles_display_dialog">Vælg toggles der skal bruges</string>
     <string name="toggles_display_close">Luk</string>
     <string name="toggles_order_title">Toggle rækkefølge</string>
     <string name="toggles_order_summary">Vælg i hvilken rækkefølge dine toggles skal være</string>
@@ -227,7 +226,6 @@
     <string name="event">Kalender ny begivenhed</string>
     <string name="voiceassist">Stemme kommandoer</string>
     <string name="title_date_longclick">Dato langt tryk aktion</string>
-    <string name="title_date_shortclick">Dato kort tryk aktion</string>
     <string name="title_clock_longclick">Ur langt tryk aktion</string>
     <string name="title_clock_shortclick">Ur kort tryk aktion</string>
 
@@ -235,7 +233,6 @@
     <string name="toggle_airplane_mode">Flytilstand</string>
     <string name="toggle_auto_rotate">Auto Rotér</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Lynopladning</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Data</string>
@@ -247,7 +244,6 @@
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Vibrer</string>
-    <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
@@ -434,7 +430,6 @@
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_weather_title">Enable</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
@@ -865,5 +860,7 @@
     <!-- haptic feedback on toggle press -->
     <string name="toggles_enable_haptic_feedback_title">Aktiver haptisk feedback</string>
     <string name="toggles_enable_haptic_feedback_summary">Brug haptisk feedback ved tryk på toggles</string>
+
+    <string name="toggles_display_dialog">Vælg toggles der skal bruges</string>
 
 </resources>

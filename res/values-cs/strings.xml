@@ -455,7 +455,6 @@
   <string name="summary_phone_flip_mode">Přepnout telefon otočením do tichého režimu během příchozího hovoru</string>
   <string name="title_phone_flip_mode">Tichý příchozí hovor</string>
   <!--Lockscreen-->
-  <string name="lock_widgets_short">Widgety na zamčené obrazovce</string>
   <string name="lockscreen_security_cat">Zabezpečení</string>
   <string name="lockscreen_layout_cat">Rozložení</string>
   <string name="lockscreen_music_cat">Hudba</string>
@@ -467,10 +466,6 @@
   <string name="lockscreen_menu_unlock_summary">Tlačítko menu odemkne obrazovku</string>
   <string name="lockscreen_auto_rotate_title">Povolit rotaci zamčené obrazovky</string>
   <string name="lockscreen_auto_rotate_summary">Zamčená obrazovka se bude natáčet podle zařízení. Tato volba je nezávislá na automatickém otočení v nastavení obrazovky.</string>
-  <string name="lockscreen_all_widgets_title">Povolit všechny widgety</string>
-  <string name="lockscreen_all_widgets_summary">VAROVÁNÍ** Některé widgety nejsou určeny pro to, být na zamčené obrazovce. Autor widgetů ani AOKP nejsou zodpovědni za následky přidávání widgetů.</string>
-  <string name="lockscreen_unlimited_widgets_title">Neomezený počet widgetů</string>
-  <string name="lockscreen_unlimited_widgets_summary">Varování** Přidání mnoha widgetů může způsobit zpomalení a lagy zamčené obrazovky.</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
   <string name="lockscreen_hide_initial_page_hints_title">Skrýt úvodní ukazatele</string>
@@ -489,7 +484,6 @@
   <string name="lockscreen_stock_music_layout_summary">Použít výchozí rozložení při přehrávání hudby.</string>
   <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
   <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
-  <string name="lockscreen_text_color_title">Barva textu na zamčené obrazovce</string>
   <string name="lockscreen_weather_title">Zapnout</string>
   <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
   <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>

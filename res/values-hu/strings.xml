@@ -214,7 +214,6 @@
     <string name="toggles_layout_title">Kapcsoló tipusa</string>
     <string name="enabled_toggles_title">Kapcsolók engedélyezése</string>
     <string name="enabled_toggles_summary">Engedélyezett kapcsolók</string>
-    <string name="toggles_display_dialog">Válaszd ki a kapcsolókat.</string>
     <string name="toggles_per_row_title">Kapcsolók soronként</string>
     <string name="toggles_per_row_summary">Válaszd ki, hogy hány kapcsoló legyen egy sorban</string>
     <string name="toggles_display_close">Bezárás</string>
@@ -260,7 +259,6 @@
     <string name="toggle_airplane_mode">Repülőgép mód</string>
     <string name="toggle_auto_rotate">Autó forgatás</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Gyors töltés</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Data</string>
@@ -272,7 +270,6 @@
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Rezgő</string>
-    <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
@@ -451,7 +448,6 @@
     <string name="title_phone_flip_mode">Telefon hívás némítás</string>
 
     <!-- Lockscreen -->
-    <string name="lock_widgets_short">Zárképernyő Modulok</string>
     <string name="lockscreen_security_cat">Biztonság</string>
     <string name="lockscreen_layout_cat">Elrendezés</string>
     <string name="lockscreen_music_cat">Zene</string>
@@ -463,10 +459,6 @@
     <string name="lockscreen_menu_unlock_summary">Menü gombbal baló feloldás</string>
     <string name="lockscreen_auto_rotate_title">Zárképernyő forgatásának engedélyezése</string>
     <string name="lockscreen_auto_rotate_summary">Zárképernyő forog a készülék tájolása szerint. Ez független a kijelző Auto-forgatásástól.</string>
-    <string name="lockscreen_all_widgets_title">Összes modul engedélyezve</string>
-    <string name="lockscreen_all_widgets_summary">Figyelmeztetés**Néhány modul nem használható zárképernyőn. A modul készítői és az Aokp nem felelősek a működésükért. Válaszd felelőséggel.</string>
-    <string name="lockscreen_unlimited_widgets_title">Végtelen modul engedélyezve</string>
-    <string name="lockscreen_unlimited_widgets_summary">Figyelmeztetés**Sok modul hozzáadása akadást okozhat.</string>
     <string name="lockscreen_battery_title">Zárképernyő akksi százalék</string>
     <string name="lockscreen_battery_summary">Mutatja a akksi százalékot a zárképernyőn</string>
     <string name="lockscreen_hide_initial_page_hints_title">Kezdőoldalak elrejtése</string>
@@ -485,7 +477,6 @@
     <string name="lockscreen_stock_music_layout_summary">Gyári elrendezés használata lejátszás közben.</string>
     <string name="lockscreen_wallpaper_title">Zárképernyő háttérkép választása</string>
     <string name="lockscreen_wallpaper_summary">Meg tudod változtatni a háttérképét</string>
-    <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
     <string name="lockscreen_weather_title">Engedélyez</string>
     <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.</string>
     <string name="lockscreen_weather_type_title">Zárképernyő időjárás stílusa</string>
@@ -918,5 +909,7 @@
     <!-- haptic feedback on toggle press -->
     <string name="toggles_enable_haptic_feedback_title">Tapintási visszajelzés</string>
     <string name="toggles_enable_haptic_feedback_summary">Visszajelzés, ha használod a kapcsolót</string>
+
+    <string name="toggles_display_dialog">Válaszd ki a kapcsolókat.</string>
 
 </resources>

@@ -168,7 +168,6 @@
   <string name="toggles_layout_title">Stile interruttori</string>
   <string name="enabled_toggles_title">Interruttori attivi</string>
   <string name="enabled_toggles_summary">Scegli gli interruttori da mostrare</string>
-  <string name="toggles_display_dialog">Scegli quali interruttori usare</string>
   <string name="toggles_display_close">Chiudi</string>
   <string name="toggles_order_title">Ordine interruttori</string>
   <string name="toggles_order_summary">Scegli l\'ordine nel quale vengono mostrati gli interruttori</string>
@@ -191,7 +190,6 @@
   <string name="toggle_airplane_mode">Modalità aereo</string>
   <string name="toggle_auto_rotate">Rotazione automatica</string>
   <string name="toggle_bluetooth">Bluetooth</string>
-  <string name="toggle_fast_charge">Ricarica rapida</string>
   <string name="toggle_gps">GPS</string>
   <string name="toggle_lte">LTE</string>
   <string name="toggle_data">Connessione dati</string>
@@ -203,7 +201,6 @@
   <string name="toggle_2g">2G</string>
   <string name="toggle_usb_tether">Condivisione connessione USB</string>
   <string name="toggle_vibrate">Vibrazione</string>
-  <string name="toggle_wifi_ap">Condivisione connessione</string>
   <string name="toggle_wifi">Wi-Fi</string>
   <!--Statusbar | Battery-->
   <string name="battery_not_title">Icona batteria nelle notifiche</string>
@@ -364,8 +361,6 @@
   <string name="lockscreen_stock_music_layout_summary">Usa lo stile standard quando si riproduce musica</string>
   <string name="lockscreen_wallpaper_title">Scegli lo sfondo della schermata di sblocco</string>
   <string name="lockscreen_wallpaper_summary">Puoi rimuovere lo sfondo dal menu in questa finestra</string>
-  <string name="lockscreen_text_color_title">Colore testo schermata di sblocco</string>
-  <string name="title_lockscreen_user_timeout_override">Aspetta per il blocco dello schermo</string>
   <string name="summary_lockscreen_user_timeout_override">Utilizza il timeout impostato anche nel caso in cui spegni manualmente lo schermo. Il comportamento standard è quello di attendere il timeout solo su spegnimento automatico.</string>
   <string name="lockscreen_weather_title">Attiva</string>
   <string name="lockscreen_weather_summary">Mostra informazioni sul meteo nella schermata di sblocco. Devi attivare il servizio meteo in impostazioni ROM</string>
@@ -681,4 +676,6 @@
   <string name="show_signal_bars">Visualizza barra segnale</string>
   <string name="show_signal_text">Visualizza testo segnale</string>
   <string name="show_with_dbm">Visualizza anche i dBm</string>
+  <string name="toggles_display_dialog">Scegli quali interruttori usare</string>
+
 </resources>

@@ -187,7 +187,6 @@
     <string name="toggles_layout_title">Układ przełączników</string>
     <string name="enabled_toggles_title">Aktywne przełączniki</string>
     <string name="enabled_toggles_summary">Wybierz przełączniki do wyświetlenia</string>
-    <string name="toggles_display_dialog">Wybierz przełączniki do użycia</string>
     <string name="toggles_display_close">Zamknij</string>
     <string name="toggles_order_title">Kolejność przełączników</string>
     <string name="toggles_order_summary">Wybierz, w jakiej kolejności przełączniki mają być wyświetlane</string>
@@ -212,7 +211,6 @@
     <string name="toggle_airplane_mode">Tryb samolotowy</string>
     <string name="toggle_auto_rotate">Auto rotacja</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Szybkie ładowanie</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Transfer danych</string>
@@ -224,7 +222,6 @@
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">Tethering USB</string>
     <string name="toggle_vibrate">Wibracje</string>
-    <string name="toggle_wifi_ap">Tethering Wi-Fi</string>
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
@@ -398,8 +395,6 @@
     <string name="lockscreen_stock_music_layout_summary">Użyj standardowego stylu muzyki na ekranie blokady</string>
     <string name="lockscreen_wallpaper_title">Wybierz tapetę ekr. blokady</string>
     <string name="lockscreen_wallpaper_summary">Możesz usunąć tapetę z ekranu blokady używając tej opcji</string>
-    <string name="lockscreen_text_color_title">Kolor tekstu ekranu blokady</string>
-    <string name="title_lockscreen_user_timeout_override">Poczekaj na ekran blokady</string>
     <string name="summary_lockscreen_user_timeout_override">Użyj czasu oczekiwania Androida gdy wygaszono ekran. Domyślnym zachowaniem jest użycie tego czasu tylko gdy nie został ręcznie uśpiony.</string>
     <string name="lockscreen_weather_title">Aktywuj</string>
     <string name="lockscreen_weather_summary">Pokaż informacje pogodowe na ekranie blokady. Musisz włączyć usługę pogodą w ustawieniach ROM Control</string>
@@ -751,5 +746,7 @@
     <string name="show_with_dbm">Pokazuj w dBm</string>
 
 
+
+    <string name="toggles_display_dialog">Wybierz przełączniki do użycia</string>
 
 </resources>

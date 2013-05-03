@@ -498,7 +498,6 @@
     <string name="title_phone_flip_mode">Phone Call Silence</string>
 
     <!-- Lockscreen -->
-    <string name="lock_widgets_short">Lockscreen Widgets</string>
     <string name="lockscreen_security_cat">Security</string>
     <string name="lockscreen_layout_cat">Layout</string>
     <string name="lockscreen_music_cat">Music</string>
@@ -511,10 +510,6 @@
     <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
-    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
-    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget maker and AOKP are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
-    <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
-    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause lag issues with lockscreen.</string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
@@ -533,7 +528,6 @@
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_weather_title">Enable</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>

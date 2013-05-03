@@ -167,13 +167,11 @@
     <string name="custom_density_dialog_summary">LCD yoğunluğunun değiştirilmesi uygulamalarda beklenmedik davranışlara sebeb olabilir.Bu şekilde bir sorun ile karşılaşırsanız buraya dönün ve 1. adımdan süreci yeniden başlatın.</string>
     <string name="custom_density_dialog_button_got">Tamam!</string>
     <string name="custom_density_dialog_button_reboot">Yeniden Başlat</string>
-    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
     <string name="toggle_style_title">Kısayol tarzı</string>
     <string name="toggle_style_summary">Kısayol metin ya da ikon gösterimini belirleyin.</string>
     <string name="toggles_layout_title">Kısayol Görünümü</string>
     <string name="enabled_toggles_title">Aktif Kısayollar</string>
     <string name="enabled_toggles_summary">Görüntülemek istediğiniz kısayolları seçin</string>
-    <string name="toggles_display_dialog">Kullanacağınız kısayolları seçin</string>
     <string name="toggles_per_row_title">Kısayol satır sayısı</string>
     <string name="toggles_per_row_summary">Bir satırda kaç kısayol gösterileceğini seçin</string>
     <string name="toggles_display_close">Kapat</string>
@@ -395,7 +393,6 @@
     <string name="flip_dialog_msg">Telefon ters çevirildiğinde sizin seçtiğiniz moda(sessiz-titreşim) alınacak. Bu işlemi gerçekleştirmek 1.5 saniye(standart) sürecek. Daha sonra ekran açıldıktan 15 saniye(standart) sonra seçtiğiniz işlem(sessiz-titreşim) geri alınacak NOT: **Ekran zaman aşımı süresine ulaştığı zaman sesli modun tekrar açılması için ekranı açmanız gerekir.**</string>
     <string name="summary_phone_flip_mode">Gelen arama sırasında ters çevirerek sessiz moda alın</string>
     <string name="title_phone_flip_mode">Gelen Arama Sessiz Modu</string>
-    <string name="lock_widgets_short">Kilit Ekranı Araçları</string>
     <string name="lockscreen_security_cat">Güvenlik</string>
     <string name="lockscreen_layout_cat">Düzen</string>
     <string name="lockscreen_music_cat">Müzik</string>
@@ -407,10 +404,6 @@
     <string name="lockscreen_menu_unlock_summary">Ekran kilidini açmak için menü tuşunu kullanın</string>
     <string name="lockscreen_auto_rotate_title">Kilit Ekranını döndürmeyi etkinleştir</string>
     <string name="lockscreen_auto_rotate_summary">Kilit ekranına cihaz yönlendirmesi ile döndürme olanağı verir. Bu ekran otomatik döndürmeden bağımsızdır</string>
-    <string name="lockscreen_all_widgets_title">Tüm Araçlara izin ver</string>
-    <string name="lockscreen_all_widgets_summary">Uyarı** Bazı Araçlar kilit ekranında kullanılmak üzere tasarlanmamış olabilir. Seçtiğiniz kilit ekranı Aracından sorumlu değiliz. Sorumluluğu alarak seçebilirsiniz.</string>
-    <string name="lockscreen_unlimited_widgets_title">Araçlara sınırsız izin ver</string>
-    <string name="lockscreen_unlimited_widgets_summary">Uyarı** Bir çok Araç ekleme kilit ekranında takılmalara neden olabilir.</string>
     <string name="lockscreen_battery_title">Kilit ekranı batarya yüzdesi</string>
     <string name="lockscreen_battery_summary">Kilit ekranında batarya yüzdesini herzaman göster</string>
     <string name="lockscreen_hide_initial_page_hints_title">Başlangıç sayfası ipuçlarını gizle</string>
@@ -429,7 +422,6 @@
     <string name="lockscreen_stock_music_layout_summary">Müzik çalarken orjinal düzeni kullan.</string>
     <string name="lockscreen_wallpaper_title">Kilit ekranı duvar kağıdı seçin</string>
     <string name="lockscreen_wallpaper_summary">Duvar kağıdını bu menüden kaldırabilirsiniz</string>
-    <string name="lockscreen_text_color_title">Kilit ekranı metin rengi</string>
     <string name="lockscreen_weather_title">Kilit Ekranı Hava Durumu</string>
     <string name="lockscreen_weather_summary">Kilit Ekranında Hava Durumu Bilgisini göster. Aktif olması için ROM Yönetimi Hava Durumu servisinin çalışması gerekir</string>
     <string name="lockscreen_weather_type_title">Kilit Ekr.Hava Durumu Tarzı</string>
@@ -782,4 +774,6 @@
     <string name="show_with_dbm">DBm olarak göster</string>
     <string name="toggles_enable_haptic_feedback_title">Dokunsal Geri Bildirimi Etkinleştir</string>
     <string name="toggles_enable_haptic_feedback_summary">Kısayollara tıklandığında dokunsal geri bildirim kullanın</string>
+    <string name="toggles_display_dialog">Kullanacağınız kısayolları seçin</string>
+
 </resources>
