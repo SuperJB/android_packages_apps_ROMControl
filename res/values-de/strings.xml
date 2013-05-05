@@ -182,7 +182,6 @@
     <string name="lockscreen_calendar_interval_summary">Wähle die Animationsgeschwindigkeit in Sekunden.</string>
 
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Stromsparmodus anzeigen</string>
     <string name="title_show_screenshot">Screenshot anzeigen</string>
     <string name="title_show_torch_toggle">Taschenlampe anzeigen</string>
     <string name="title_show_airplane_toggle">Flugmodus anzeigen</string>

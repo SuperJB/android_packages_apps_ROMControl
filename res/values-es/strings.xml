@@ -67,7 +67,6 @@
     <string name="custom_app_icon_successfully">"'s cambio realizado!"</string>
 
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Mostrar ahorro de energía</string>
     <string name="title_show_screenshot">Mostrar Captura de pantalla</string>
     <string name="title_show_torch_toggle">Mostrar interruptor de la linterna</string>
     <string name="title_show_airplane_toggle">Mostrar interruptor modo avión</string>

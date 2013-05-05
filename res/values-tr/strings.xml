@@ -53,7 +53,6 @@
     <string name="advanced_settings">Gelişmiş Ayarlar</string>
     <string name="misc_short">Çeşitli</string>
     <string name="custom_app_icon_successfully">Simge başarıyla uygulandı!</string>
-    <string name="title_show_power_saver">Güç Koruyucuyu</string>
     <string name="title_show_screenshot">Ekran Görüntüsü</string>
     <string name="title_show_torch_toggle">Fener Kısayolu</string>
     <string name="title_show_airplane_toggle">Uçak Modu</string>

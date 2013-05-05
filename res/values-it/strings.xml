@@ -58,7 +58,6 @@
   <string name="misc_short">Miscellanea</string>
   <string name="custom_app_icon_successfully">Icona \'s impostata con successo!</string>
   <!--Power Menu-->
-  <string name="title_show_power_saver">Mostra risparmio energetico</string>
   <string name="title_show_screenshot">Mostra screenshot</string>
   <string name="title_show_torch_toggle">Mostra interruttore torcia</string>
   <string name="title_show_airplane_toggle">Mostra interruttore modalità aereo</string>

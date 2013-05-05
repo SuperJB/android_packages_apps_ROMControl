@@ -67,7 +67,6 @@
     <string name="custom_app_icon_successfully">"sikeres ikon állítás!"</string>
 
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Energia takarékos mód</string>
     <string name="title_show_screenshot">Képernyőkép</string>
     <string name="title_show_torch_toggle">Zseblámpa kapcsoló</string>
     <string name="title_show_airplane_toggle">Repülőgép üzemmód</string>

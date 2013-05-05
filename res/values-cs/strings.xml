@@ -60,7 +60,6 @@
   <string name="misc_short">Ostatní</string>
   <string name="custom_app_icon_successfully"> ikona úspěšně nastavena!</string>
   <!--Power Menu-->
-  <string name="title_show_power_saver">Zobrazit spořič energie</string>
   <string name="title_show_screenshot">Zobrazit snímek obrazovky</string>
   <string name="title_show_torch_toggle">Zobrazit přepínač svítilny</string>
   <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>

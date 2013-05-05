@@ -67,7 +67,6 @@
     <string name="custom_app_icon_successfully">"'s ikon indstillet korrekt!"</string>
 
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Vis strømsparing</string>
     <string name="title_show_screenshot">Vis screenshot</string>
     <string name="title_show_torch_toggle">Vis lygte toggle</string>
     <string name="title_show_airplane_toggle">Vis flytilstand toggle</string>
