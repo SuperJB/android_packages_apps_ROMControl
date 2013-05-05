@@ -59,7 +59,6 @@
   <string name="custom_app_icon_successfully">Icona \'s impostata con successo!</string>
   <!--Power Menu-->
   <string name="title_show_screenshot">Mostra screenshot</string>
-  <string name="title_show_torch_toggle">Mostra interruttore torcia</string>
   <string name="title_show_airplane_toggle">Mostra interruttore modalità aereo</string>
   <string name="title_show_navbar_hide">Mostra nascondi navigation bar</string>
   <!--Power Saving-->

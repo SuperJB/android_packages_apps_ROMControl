@@ -68,7 +68,6 @@
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Mostrar Captura de pantalla</string>
-    <string name="title_show_torch_toggle">Mostrar interruptor de la linterna</string>
     <string name="title_show_airplane_toggle">Mostrar interruptor modo avión</string>
     <string name="title_show_navbar_hide">Mostrar interruptor de barra de navegación</string>
 

@@ -66,7 +66,6 @@
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Pokaż zrzut ekranu</string>
-    <string name="title_show_torch_toggle">Pokaż przełącznik latarki</string>
     <string name="title_show_airplane_toggle">Pokaż przełącznik trybu sam.</string>
     <string name="title_show_navbar_hide">Pokaż przełącznik belki naw.</string>
 

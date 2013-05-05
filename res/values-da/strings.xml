@@ -68,7 +68,6 @@
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Vis screenshot</string>
-    <string name="title_show_torch_toggle">Vis lygte toggle</string>
     <string name="title_show_airplane_toggle">Vis flytilstand toggle</string>
     <string name="title_show_navbar_hide">Vis navigation bar toggle</string>
 

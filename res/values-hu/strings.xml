@@ -68,7 +68,6 @@
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Képernyőkép</string>
-    <string name="title_show_torch_toggle">Zseblámpa kapcsoló</string>
     <string name="title_show_airplane_toggle">Repülőgép üzemmód</string>
     <string name="title_show_navbar_hide">Navigációs sáv mutatása</string>
 

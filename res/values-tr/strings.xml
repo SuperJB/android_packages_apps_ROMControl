@@ -54,7 +54,6 @@
     <string name="misc_short">Çeşitli</string>
     <string name="custom_app_icon_successfully">Simge başarıyla uygulandı!</string>
     <string name="title_show_screenshot">Ekran Görüntüsü</string>
-    <string name="title_show_torch_toggle">Fener Kısayolu</string>
     <string name="title_show_airplane_toggle">Uçak Modu</string>
     <string name="title_show_navbar_hide">Yazılımsal Tuş Butonları</string>
     <string name="title_pref_powersaving_pref_mode">Güç Koruyucuyu etkinleştir</string>

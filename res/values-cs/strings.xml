@@ -61,7 +61,6 @@
   <string name="custom_app_icon_successfully"> ikona úspěšně nastavena!</string>
   <!--Power Menu-->
   <string name="title_show_screenshot">Zobrazit snímek obrazovky</string>
-  <string name="title_show_torch_toggle">Zobrazit přepínač svítilny</string>
   <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>
   <string name="title_show_navbar_hide">Zobrazit přepínač navigační lišty</string>
   <string name="title_show_reboot_keyguard">Zobrazit restartovat na zamčené obrazovce</string>
