@@ -11,7 +11,6 @@
     <string name="header_navbar">Barra de navegación</string>
     <string name="toggles_layout">Interruptores</string>
     <string name="general_ui">Cambios visuales</string>
-    <string name="clock">Reloj</string>
     <string name="battery">Batería</string>
     <string name="signal">Señal</string>
     <string name="nav_bar">Barra de navegación</string>
@@ -42,7 +41,6 @@
     <string name="title_clipboard_share">Compartir portapapeles</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
@@ -199,10 +197,6 @@
     <string name="toggle_favcontact_summary">Elegir tu contacto favorito</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Ubicación del reloj</string>
-    <string name="title_clock_ampm_entries">Formato AM/PM</string>
-    <string name="enable_clock_weekday">Día de la semana</string>
-    <string name="enable_clock_weekday_summary">Tipo de abreviación del día de la semana antes de la hora</string>
     <string name="colors">Colores</string>
     <string name="clock_color_title">Color de la hora</string>
     <string name="alarm">Alarma</string>
@@ -211,9 +205,6 @@
     <string name="today">Calendario para hoy</string>
     <string name="event">Calendario de nuevo evento</string>
     <string name="voiceassist">Comandos de voz</string>
-    <string name="title_clock_doubleclick">Pulsación doble en el reloj</string>
-    <string name="title_clock_longclick">Pulsación larga en el reloj</string>
-    <string name="title_clock_shortclick">Pulsación corta en el reloj</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Modo Vuelo</string>
@@ -483,15 +474,8 @@
  Puede asignar una vibración personalizada a un contacto desde la aplicación contactos: Después de cargar un contacto vaya a Menú/Ajustar vibración."</string>
     <!-- boot animation stuff -->
     <!-- clock stuff -->
-    <string name="right_clock">Derecha</string>
-    <string name="center_clock">Centrado</string>
-    <string name="no_clock">Sin reloj</string>
     <string name="dont_show">No mostrar</string>
-    <string name="small_am_pm">AM/PM pequeño</string>
-    <string name="regular_am_pm">AM/PM normal</string>
     <string name="protekk_oclock">"ProTekk O'Clock"</string>
-    <string name="small_weekday">Día de la semana pequeño</string>
-    <string name="regular_weekday">Día de la semana normal</string>
 
     <!-- toggle style -->
     <string name="icon_only">Solo icono</string>

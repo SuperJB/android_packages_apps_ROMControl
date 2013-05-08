@@ -9,7 +9,6 @@
   <string name="header_navbar">Barra di navigazione</string>
   <string name="toggles_layout">Interruttori</string>
   <string name="general_ui">Interfaccia generale</string>
-  <string name="clock">Orologio</string>
   <string name="battery">Batteria</string>
   <string name="signal">Segnale</string>
   <string name="nav_bar">Barra di navigazione</string>
@@ -36,7 +35,6 @@
   <string name="title_performance">Impostazioni Performance</string>
   <string name="title_clipboard_share">Copia</string>
   <!--Header Summaries-->
-  <string name="header_summary_clock">@null</string>
   <string name="header_summary_toggles">@null</string>
   <string name="header_summary_general_ui">@null</string>
   <string name="header_summary_battery">@null</string>
@@ -163,10 +161,6 @@
   <string name="toggle_btn_background_title">Attiva la trasparenza dello sfondo</string>
   <string name="toggle_text_color_title">Modifica il colore del testo</string>
   <!--Statusbar | Clock-->
-  <string name="clock_title_enable">Stile orologio</string>
-  <string name="title_clock_ampm_entries">Stile AM/PM </string>
-  <string name="enable_clock_weekday">Giorno della settimana</string>
-  <string name="enable_clock_weekday_summary">Giorno della settimana abbreviato prima dell\'orologio</string>
   <string name="colors">Colori</string>
   <string name="clock_color_title">Colore orologio</string>
   <!--Toggle Strings to be called from device overlays-->
@@ -515,15 +509,8 @@
   <string name="vibration_detailed_help">Puoi creare nuovi modelli di vibrazione in 5 semplici passi:\n\n         - Clicca su Nuovo / Resetta\n\n         - Clicca su Registra\n\n         - Registra il modello premendo il pulsante TAP!\n\n         - Clicca su Stop\n\n         - Clicca su Salva, immettere un nome e premere OK\n\n\n         È possibile verificare quello che hai appena registrato premendo il pulsante Play.\n\n         Se si desidera modificare un modello già salvato usa il tasto Carica, scegli un modello e registra di nuovo. Attenzione: il modello sarà sovrascritto, anche se si sceglie un altro nome.\n\n         Per eliminare un modello usa il tasto Elimina, scegli il tuo modello e clicca Elimina di nuovo. Non è possibile eliminare la vibrazione di default.\n\n\n         È possibile scegliere la vibrazione di default per le chiamate telefoniche in Telefono / Impostazioni o in Impostazioni / Audio.\n\n         È possibile assegnare modelli di vibrazione personalizzati ai tuoi contatti nella App Persone: nelle impostazioni di un contatto, nel menù Imposta Vibrazioni.</string>
   <!--boot animation stuff-->
   <!--clock stuff-->
-  <string name="right_clock">Orologio a destra</string>
-  <string name="center_clock">Orologio centrale</string>
-  <string name="no_clock">Niente orologio</string>
   <string name="dont_show">Non visualizzare</string>
-  <string name="small_am_pm">AM/PM piccolo</string>
-  <string name="regular_am_pm">AM/PM standard</string>
   <string name="protekk_oclock">ProTekk O\'Clock</string>
-  <string name="small_weekday">Giorno settimana piccolo</string>
-  <string name="regular_weekday">Giorno settimana standard</string>
   <!--toggle style-->
   <string name="icon_only">Solo icona</string>
   <string name="text_only">Solo testo</string>

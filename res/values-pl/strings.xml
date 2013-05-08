@@ -11,7 +11,6 @@
     <string name="header_navbar">Belka nawigacyjna</string>
     <string name="toggles_layout">Przełączniki</string>
     <string name="general_ui">Ogólny wygląd</string>
-    <string name="clock">Zegar</string>
     <string name="battery">Bateria</string>
     <string name="signal">Sygnał</string>
     <string name="nav_bar">Belka nawigacyjna</string>
@@ -40,7 +39,6 @@
     <string name="title_clipboard_share">Udostępnij do schowka</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
@@ -183,10 +181,6 @@
     <string name="toggle_text_color_title">Kolor tekstu przełączników</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Styl zegarka</string>
-    <string name="title_clock_ampm_entries">Styl AM/PM</string>
-    <string name="enable_clock_weekday">Dzień tygodnia</string>
-    <string name="enable_clock_weekday_summary">Skrócona nazwa dnia tygodnia obok zegarka</string>
     <string name="colors">Kolory</string>
     <string name="clock_color_title">Kolor zegarka</string>
 
@@ -569,15 +563,8 @@
     <!-- boot animation stuff -->
 
     <!-- clock stuff -->
-    <string name="right_clock">Zegar z prawej</string>
-    <string name="center_clock">Wyśrodkowany zegar</string>
-    <string name="no_clock">Brak zegara</string>
     <string name="dont_show">Nie pokazuj</string>
-    <string name="small_am_pm">Małe AM/PM</string>
-    <string name="regular_am_pm">Pełne AM/PM</string>
     <string name="protekk_oclock">ProTekk O\'Clock</string>
-    <string name="small_weekday">Mały dzień tygodnia</string>
-    <string name="regular_weekday">Duży dzień tygodnia</string>
 
     <!-- toggle style -->
     <string name="icon_only">Tylko ikona</string>

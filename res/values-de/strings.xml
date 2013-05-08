@@ -13,7 +13,6 @@
     <string name="statusbar">Benachrichtungsleiste</string>
     <string name="general">Allgemein</string>
     <string name="toggles_layout">Schalter</string>
-    <string name="clock">Uhr</string>
     <string name="battery">Batterie</string>
     <string name="nav_bar">Navigationsleiste</string>
     <string name="tools">Tools</string>
@@ -29,7 +28,6 @@
     <string name="header_summary_led">Standardeinstellungen von Android bearbeiten</string>
     <string name="header_summary_general">Verhalten des Einstellungs Buttons</string>
     <string name="header_summary_toggles">Schalter anpassen</string>
-    <string name="header_summary_clock">Uhr Position, AM/PM anzeigen, Farbe</string>
     <string name="header_summary_weather">De-/aktivieren, Standort oder Netzwerkstandort, Intervall</string>
     <string name="header_summary_signal">Empfangs Text (dBm)</string>
 
@@ -245,15 +243,11 @@
 
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Aussehen der Uhr</string>
-    <string name="title_clock_ampm_entries">AM/PM anzeigen</string>
     <string name="colors">Farben</string>
     <string name="clock_color_title">Farbe der Uhr</string>
     <string name="reset_color_title">Farbe zurücksetzen</string>
     <string name="enable_alarm_title">Weckersymbol aktivieren</string>
     <string name="enable_alarm_summary">Nach (de-)aktivieren müssen Deine Alarme erneut aktiviert werden um sie anzuzeigen. (Anderenfalls neustarten)</string>
-    <string name="enable_clock_weekday">Wochentag</string>
-    <string name="enable_clock_weekday_summary">Wochentag in verkürztem Format vor der Uhrzeit anzeigen.</string>
 
 <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Aussehen der Schalter</string>

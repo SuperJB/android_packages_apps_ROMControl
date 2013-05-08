@@ -8,7 +8,6 @@
     <string name="header_navbar">Yazılımsal Tuş</string>
     <string name="toggles_layout">Kısayollar</string>
     <string name="general_ui">Genel Ayarlar</string>
-    <string name="clock">Saat</string>
     <string name="battery">Batarya</string>
     <string name="signal">Sinyal</string>
     <string name="nav_bar">Yazılımsal Tuş</string>
@@ -34,7 +33,6 @@
     <string name="title_weather">Hava Durumu Ayarları</string>
     <string name="title_performance">Performans Ayarları</string>
     <string name="title_clipboard_share">Panoda Paylaş</string>
-    <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
@@ -179,10 +177,6 @@
     <string name="toggle_enable_fasttoggle_summary">Varsayılan davranışı geçersiz kıl</string>
     <string name="toggle_choose_fasttoggle_side_title">Hızlı geçiş tarafını seç</string>
     <string name="toggle_choose_fasttoggle_side_summary">Hızlı geçiş alanının hangi taraf olacağını seçin</string>
-    <string name="clock_title_enable">Saat Tarzı</string>
-    <string name="title_clock_ampm_entries">AM/PM Tarzı</string>
-    <string name="enable_clock_weekday">Haftanın günü</string>
-    <string name="enable_clock_weekday_summary">Saatten önce kısaltılmış gün</string>
     <string name="colors">Renkler</string>
     <string name="clock_color_title">Saat rengi</string>
     <string name="alarm">Alarmlar</string>
@@ -191,9 +185,6 @@
     <string name="today">Bugün için Takvim</string>
     <string name="event">Takvim yeni etkinlik</string>
     <string name="voiceassist">Sesli komutlar</string>
-    <string name="title_clock_doubleclick">Saat çift tıklama hareketi</string>
-    <string name="title_clock_longclick">Saat uzun basma hareketi</string>
-    <string name="title_clock_shortclick">Saat kısa tıklama hareketi</string>
     <string name="toggle_airplane_mode">Uçak Modu</string>
     <string name="toggle_auto_rotate">Oto-Çevirme</string>
     <string name="toggle_bluetooth">Bluetooth</string>
@@ -619,15 +610,8 @@
 
  Telefonunuzda aramalar için varsayılan titreşimi Telefon/Ayarlar yada Ayarlar/Ses içinden seçebilirsiniz.
  Siz telefonunuzdaki kayıtlı kişilere özel desenler oluşturabilirsiniz: Kişi yüklendikten sonra Menü/Ayarla butonuna dokunun."</string>
-    <string name="right_clock">Saat sağda</string>
-    <string name="center_clock">Saat ortada</string>
-    <string name="no_clock">Saat yok</string>
     <string name="dont_show">"Gösterme"</string>
-    <string name="small_am_pm">Küçük AM/PM</string>
-    <string name="regular_am_pm">Normal AM/PM</string>
     <string name="protekk_oclock">"ProTekk Saat"</string>
-    <string name="small_weekday">Haftanın günü küçük</string>
-    <string name="regular_weekday">Haftanın günü normal</string>
     <string name="icon_only">Sadece simge</string>
     <string name="text_only">Sadece rakam</string>
     <string name="on_top">Üstte</string>

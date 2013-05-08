@@ -11,7 +11,6 @@
     <string name="header_navbar">Navigációs sáv</string>
     <string name="toggles_layout">Kapcsolók</string>
     <string name="general_ui">Általános felület</string>
-    <string name="clock">Óra</string>
     <string name="battery">Akkumulátor</string>
     <string name="signal">Jel</string>
     <string name="nav_bar">Navigációs sáv</string>
@@ -42,7 +41,6 @@
     <string name="title_clipboard_share">Megosztás vágólapra</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
@@ -223,10 +221,6 @@
     <string name="toggle_choose_fasttoggle_side_summary">Válaszd ki melyik oldalon legyen</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Óra stílus</string>
-    <string name="title_clock_ampm_entries">AM/PM </string>
-    <string name="enable_clock_weekday">A hét napja</string>
-    <string name="enable_clock_weekday_summary">Rövidített nap kijelzése az óra előtt</string>
     <string name="colors">Színek</string>
     <string name="clock_color_title">Óra színe</string>
     <string name="alarm">Riasztások</string>
@@ -234,9 +228,6 @@
     <string name="today">Naptár mai nap</string>
     <string name="event">Naptár új esemény</string>
     <string name="voiceassist">Hang utasítások</string>
-    <string name="title_clock_doubleclick">Óra dupla érintése</string>
-    <string name="title_clock_longclick">Óra rövid érintése</string>
-    <string name="title_clock_shortclick">Óra hosszú érintése</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Repülőgép mód</string>
@@ -730,15 +721,8 @@
     <!-- boot animation stuff -->
 
     <!-- clock stuff -->
-    <string name="right_clock">Jobb oldalon</string>
-    <string name="center_clock">Középen</string>
-    <string name="no_clock">Nincs óra</string>
     <string name="dont_show">Ne mutasd</string>
-    <string name="small_am_pm">Kis AM/PM</string>
-    <string name="regular_am_pm">Normál AM/PM</string>
     <string name="protekk_oclock">ProTekk Óra</string>
-    <string name="small_weekday">Kis hétköznap</string>
-    <string name="regular_weekday">Normál hétköznap</string>
 
     <!-- toggle style -->
     <string name="icon_only">Csak ikon</string>

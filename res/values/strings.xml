@@ -12,7 +12,6 @@
     <string name="header_navbar">Navigation Bar</string>
     <string name="toggles_layout">Toggles</string>
     <string name="general_ui">General UI</string>
-    <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
     <string name="nav_bar">Navigation Bar</string>
@@ -44,7 +43,6 @@
     <string name="title_clipboard_share">Share to Clipboard</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
@@ -231,10 +229,6 @@
     <string name="add_toggles">Change toggles</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Clock style</string>
-    <string name="title_clock_ampm_entries">AM/PM style</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
     <string name="colors">Colors</string>
     <string name="clock_color_title">Clock color</string>
     <string name="alarm">Alarms</string>
@@ -243,9 +237,6 @@
     <string name="today">Calendar for today</string>
     <string name="event">Calendar new event</string>
     <string name="voiceassist">Voice commands</string>
-    <string name="title_clock_doubleclick">Clock double click actions</string>
-    <string name="title_clock_longclick">Clock long click actions</string>
-    <string name="title_clock_shortclick">Clock short click actions</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Airplane Mode</string>
@@ -499,15 +490,8 @@
     <!-- boot animation stuff -->
 
     <!-- clock stuff -->
-    <string name="right_clock">Right clock</string>
-    <string name="center_clock">Center clock</string>
-    <string name="no_clock">No clock</string>
     <string name="dont_show">Don\'t show</string>
-    <string name="small_am_pm">Small AM/PM</string>
-    <string name="regular_am_pm">Regular AM/PM</string>
     <string name="protekk_oclock">ProTekk O\'Clock</string>
-    <string name="small_weekday">Small weekday</string>
-    <string name="regular_weekday">Regular weekday</string>
 
     <!-- toggle style -->
     <string name="icon_only">Icon only</string>

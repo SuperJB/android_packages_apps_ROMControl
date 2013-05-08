@@ -10,7 +10,6 @@
   <string name="header_navbar">Navigační lišta</string>
   <string name="toggles_layout">Přepínače</string>
   <string name="general_ui">Hlavní nastavení</string>
-  <string name="clock">Hodiny</string>
   <string name="battery">Baterie</string>
   <string name="signal">Signál</string>
   <string name="nav_bar">Navigační lišta</string>
@@ -38,7 +37,6 @@
   <string name="title_performance">Nastavení výkonu</string>
   <string name="title_clipboard_share">Sdílení do schránky</string>
   <!--Header Summaries-->
-  <string name="header_summary_clock">@null</string>
   <string name="header_summary_toggles">@null</string>
   <string name="header_summary_general_ui">@null</string>
   <string name="header_summary_battery">@null</string>
@@ -212,10 +210,6 @@
   <string name="toggle_swap_handle_side">Uchopením vpravo je možné přetahovat</string>
   <string name="add_toggles">Změnit přepínače</string>
   <!--Statusbar | Clock-->
-  <string name="clock_title_enable">Styl hodin</string>
-  <string name="title_clock_ampm_entries">AM/PM styl</string>
-  <string name="enable_clock_weekday">Den v týdnu</string>
-  <string name="enable_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
   <string name="colors">Barvy</string>
   <string name="clock_color_title">Barva hodin</string>
   <string name="alarm">Budíky</string>
@@ -224,9 +218,6 @@
   <string name="today">Dnešní kalendář</string>
   <string name="event">Nová událost v kalendáři</string>
   <string name="voiceassist">Hlasové příkazy</string>
-  <string name="title_clock_doubleclick">Akce dvojitého stisku hodin</string>
-  <string name="title_clock_longclick">Akce dlouhého stisku hodin</string>
-  <string name="title_clock_shortclick">Akce krátkého stisku hodin</string>
   <!--Toggle Strings to be called from device overlays-->
   <string name="toggle_airplane_mode">Režim letadlo</string>
   <string name="toggle_auto_rotate">Automatická rotace</string>
@@ -681,15 +672,8 @@
   <string name="vibration_detailed_help">Vytvářet vlastní vibrační vzory je možné v 5 jednoduchých krocích:\n\n    - Stisknout Nový/Reset\n\n    - Stisknout Nahrát\n\n    - Nahrát vzor mačkáním tlačítka STISK!\n\n    - Stisknout Zastavit\n\n    - Stisknout Uložit, zadat název a opět stisknout OK\n\n\n    Zkontrolovat aktuální vzor je možné ihned tlačítkem Spustit.\n\n    Upravení existujícího vzoru je možné stiskem Načíst, vybráním uloženého vzoru, znovu-nahráním a opětovným uložením (vzorb bude přepsán, i když bude zvoleno jiné jméno).\n\n    Pro smazání vibračního vzoru je třeba strisknout Smazat, vybrat vzor a poté znovu stisknout Smazat. Výchozí vibrace nemůže být smazána.\n\n\n    Výchozí vibraci pro příchozí hovory je možné zvolit v nastavení hovorů, nebo nastavení zvuku.\n \n    Též je možné přiřadit vibrační vzory jednotlivým kontaktům: po načtení kontaktu stiskem Menu/Nastavit vibrační vzor.</string>
   <!--boot animation stuff-->
   <!--clock stuff-->
-  <string name="right_clock">Hodiny vpravo</string>
-  <string name="center_clock">Hodiny uprostřed</string>
-  <string name="no_clock">Bez hodin</string>
   <string name="dont_show">Nezobrazovat</string>
-  <string name="small_am_pm">Malé AM/PM</string>
-  <string name="regular_am_pm">Normální AM/PM</string>
   <string name="protekk_oclock">Styl ProTekk</string>
-  <string name="small_weekday">Malý den</string>
-  <string name="regular_weekday">Normální den</string>
   <!--toggle style-->
   <string name="icon_only">Jen ikona</string>
   <string name="text_only">Jen text</string>
